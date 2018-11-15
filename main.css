@@ -1,0 +1,43 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body.index main section {
+  height: 100vh;
+  padding-right: 50%;
+  color: white;
+  background-position: center;
+  background-size: cover;
+}
+
+body.index aside {
+  position: fixed;
+  top: 2.25rem;
+  right: 2.25rem;
+  width: calc(50vw - 3rem);
+  height: calc(100vh - 4.5rem);
+  background-color: white;
+  transition: all 500ms ease;
+  will-change: top, right, width, height, padding;
+}
+
+body.index aside.expanded {
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  padding: 2.25rem 2.25rem 2.25rem 0.75rem;
+}
+
+[id^="aside"] {
+  transition: opacity 425ms ease-in-out;
+  will-change: opacity;
+}
+
+[id^="aside"].transparent {
+  opacity: 0;
+}
+
+.p-aside {
+  padding: 3rem 50% 3rem 3rem;
+}
