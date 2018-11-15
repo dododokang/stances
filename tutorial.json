@@ -1,0 +1,112 @@
+[
+  {
+    "name": "주제 카테고리",
+    "statement": "주제 메인 명제",
+    "reasons": [
+      {
+        "type": "disagree",
+        "content": "모든 판결에는 오판이 있을 가능성이 있다."
+      },
+      {
+        "type": "agree",
+        "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
+      },
+      {
+        "type": "disagree",
+        "content": "생명권은 모두가 존중 받아야 한다."
+      },
+      {
+        "type": "agree",
+        "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
+      }
+    ]
+  },
+  {
+    "name": "주제 카테고리",
+    "statement": "주제 메인 명제",
+    "reasons": [
+      {
+        "type": "disagree",
+        "content": "모든 판결에는 오판이 있을 가능성이 있다."
+      },
+      {
+        "type": "agree",
+        "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
+      },
+      {
+        "type": "disagree",
+        "content": "생명권은 모두가 존중 받아야 한다."
+      },
+      {
+        "type": "agree",
+        "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
+      }
+    ]
+  },
+  {
+    "name": "주제 카테고리",
+    "statement": "주제 메인 명제",
+    "reasons": [
+      {
+        "type": "disagree",
+        "content": "모든 판결에는 오판이 있을 가능성이 있다."
+      },
+      {
+        "type": "agree",
+        "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
+      },
+      {
+        "type": "disagree",
+        "content": "생명권은 모두가 존중 받아야 한다."
+      },
+      {
+        "type": "agree",
+        "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
+      }
+    ]
+  },
+  {
+    "name": "주제 카테고리",
+    "statement": "주제 메인 명제",
+    "reasons": [
+      {
+        "type": "disagree",
+        "content": "모든 판결에는 오판이 있을 가능성이 있다."
+      },
+      {
+        "type": "agree",
+        "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
+      },
+      {
+        "type": "disagree",
+        "content": "생명권은 모두가 존중 받아야 한다."
+      },
+      {
+        "type": "agree",
+        "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
+      }
+    ]
+  },
+  {
+    "name": "주제 카테고리",
+    "statement": "주제 메인 명제",
+    "reasons": [
+      {
+        "type": "disagree",
+        "content": "모든 판결에는 오판이 있을 가능성이 있다."
+      },
+      {
+        "type": "agree",
+        "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
+      },
+      {
+        "type": "disagree",
+        "content": "생명권은 모두가 존중 받아야 한다."
+      },
+      {
+        "type": "agree",
+        "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
+      }
+    ]
+  }
+]
