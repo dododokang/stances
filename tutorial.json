@@ -4,19 +4,19 @@
     "statement": "일부 범죄의 경우, 사형집행을 채택할 수 있어야 한다.",
     "reasons": [
       {
-        "type": "disagree",
+        "stance": "disagree",
         "content": "모든 판결에는 오판이 있을 가능성이 있다."
       },
       {
-        "type": "agree",
+        "stance": "agree",
         "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
       },
       {
-        "type": "disagree",
+        "stance": "disagree",
         "content": "생명권은 모두가 존중 받아야 한다."
       },
       {
-        "type": "agree",
+        "stance": "agree",
         "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
       }
     ]
@@ -26,19 +26,19 @@
     "statement": "일부 범죄의 경우, 사형집행을 채택할 수 있어야 한다.",
     "reasons": [
       {
-        "type": "disagree",
+        "stance": "disagree",
         "content": "모든 판결에는 오판이 있을 가능성이 있다."
       },
       {
-        "type": "agree",
+        "stance": "agree",
         "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
       },
       {
-        "type": "disagree",
+        "stance": "disagree",
         "content": "생명권은 모두가 존중 받아야 한다."
       },
       {
-        "type": "agree",
+        "stance": "agree",
         "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
       }
     ]
@@ -48,19 +48,19 @@
     "statement": "주제 메인 명제",
     "reasons": [
       {
-        "type": "disagree",
+        "stance": "disagree",
         "content": "모든 판결에는 오판이 있을 가능성이 있다."
       },
       {
-        "type": "agree",
+        "stance": "agree",
         "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
       },
       {
-        "type": "disagree",
+        "stance": "disagree",
         "content": "생명권은 모두가 존중 받아야 한다."
       },
       {
-        "type": "agree",
+        "stance": "agree",
         "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
       }
     ]
@@ -70,19 +70,19 @@
     "statement": "탕수육을 먹을 때 소스를 부어먹는 것보다 찍어먹는 것이 더 맛있다.",
     "reasons": [
       {
-        "type": "disagree",
+        "stance": "disagree",
         "content": "소스에 적셔진 탕수육은 먹을 때 입천장이 까지지 않는다."
       },
       {
-        "type": "agree",
+        "stance": "agree",
         "content": "양념의 양을 조절해서 먹을 수 있는 것이 건강에 좋다."
       },
       {
-        "type": "disagree",
+        "stance": "disagree",
         "content": "음식을 양념을 찍는 과정은 번거롭다."
       },
       {
-        "type": "agree",
+        "stance": "agree",
         "content": "튀김은 바삭해야한다."
       }
     ]
