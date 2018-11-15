@@ -1,7 +1,7 @@
 [
   {
-    "name": "주제 카테고리",
-    "statement": "주제 메인 명제",
+    "name": "법",
+    "statement": "일부 범죄의 경우, 사형집행을 채택할 수 있어야 한다.",
     "reasons": [
       {
         "type": "disagree",
@@ -88,12 +88,12 @@
     ]
   },
   {
-    "name": "주제 카테고리",
-    "statement": "주제 메인 명제",
+    "name": "취향",
+    "statement": "탕수육을 먹을 때 소스를 부어먹는 것보다 찍어먹는 것이 더 맛있다.",
     "reasons": [
       {
         "type": "disagree",
-        "content": "모든 판결에는 오판이 있을 가능성이 있다."
+        "content": "소스에 적셔진 탕수육은 먹을 때 입천장이 까지지 않는다."
       },
       {
         "type": "agree",
@@ -101,11 +101,11 @@
       },
       {
         "type": "disagree",
-        "content": "생명권은 모두가 존중 받아야 한다."
+        "content": "양념을 찍는 과정은 번거롭다."
       },
       {
         "type": "agree",
-        "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
+        "content": "튀김은 ."
       }
     ]
   }
