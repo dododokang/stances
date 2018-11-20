@@ -86,24 +86,24 @@ body.index aside.expanded {
 }
 
 .reveal {
-  animation: reveal 0.75s ease-out backwards;
+  animation: reveal 1s ease-out backwards;
   will-change: opacity, transform;
 }
 
 [data-reveal="0"] {
-  animation-delay: 0.25s;
+  animation-delay: 0.3s;
 }
 
 [data-reveal="1"] {
-  animation-delay: 0.5s;
+  animation-delay: 1.4s;
 }
 
 [data-reveal="2"] {
-  animation-delay: 0.75s;
+  animation-delay: 2.6s;
 }
 
 [data-reveal="3"] {
-  animation-delay: 1s;
+  animation-delay: 4.2s;
 }
 
 .p-aside {
