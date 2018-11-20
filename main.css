@@ -11,7 +11,15 @@ h2 {
   color: #003ca0;
 }
 
+h3 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 48px;
+  color: #003ca0;
+}
+
 h4 {
+  margin-bottom: 1rem;
   font-size: 16px;
   font-weight: 900;
   line-height: 1.2;
@@ -19,14 +27,19 @@ h4 {
 }
 
 p {
+  margin-bottom: 1.5rem;
   font-size: 16px;
   font-weight: 500;
   line-height: 28px;
   letter-spacing: -0.01em;
   color: #333;
+  word-break: keep-all;
 }
 
 button[type="submit"] {
+  position: absolute;
+  bottom: 72px;
+  right: 90px;
   width: 160px;
   height: 40px;
   font-size: 14px;
@@ -38,7 +51,28 @@ button[type="submit"] {
   color: #fff;
 }
 
-body.index main section {
+input[name="stance"] ~ button {
+  width: 142px;
+  height: 42px;
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+  font-size: 14px;
+  font-weight: 700;
+  border-width: 2px;
+  border-radius: 21px;
+}
+
+textarea {
+  width: 392px;
+  padding: 0 1.5rem 0.25rem;
+  margin: 0.25rem 1rem 0.5rem -0.1rem;
+  font-weight: 900;
+  color: #333;
+  border: 2px solid #003ca0;
+  border-radius: 26px;
+}
+
+section {
   height: 100vh;
   padding-right: 50%;
   color: white;
@@ -46,7 +80,7 @@ body.index main section {
   background-size: cover;
 }
 
-body.index aside {
+aside {
   position: fixed;
   top: 2.25rem;
   right: 2.25rem;
@@ -129,6 +163,28 @@ body.index aside.expanded {
 
 .bg-primary {
   background-color: #003ca0 !important;
+}
+
+.btn-outline-success {
+  color: #4da0b0;
+  border-color: #4da0b0;
+}
+
+.btn-outline-success:hover,
+.btn-outline-success:not(:disabled):not(.disabled):active {
+  background-color: #4da0b0;
+  border-color: #4da0b0;
+}
+
+.btn-outline-danger {
+  color: #ff7d7d;
+  border-color: #ff7d7d;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:not(:disabled):not(.disabled):active {
+  background-color: #ff7d7d;
+  border-color: #ff7d7d;
 }
 
 .topic-reason {
