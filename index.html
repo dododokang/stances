@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500,700,900">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
   </head>
@@ -48,27 +48,27 @@
         </form>
       </div>
       <div id="aside-1" class="p-5 d-none transparent">
-        <h2>환영합니다! <span data-bind="name"></span>님</h2>
+        <h2>환영합니다.<br><span data-bind="name"></span>님!</h2>
         <div class="mt-5">
-          <p>지금부터 토론 지도에서 어떻게 탐험할 수 있는지 확인해봅시다!</p>
-          <p>튜토리얼은 총 3단계를 거칩니다. 이 과정을 통해서 주장들이 어떻게 만들어지고 연결될 수 있는지 살펴보아요.</p>
+          <p>토론의 영역에 오신 것을 환영합니다!<br>탐험가님은 앞으로 미지의 의견들을 찾아 탐험해 나갈 것입니다.<br>Stances에서는 탐험가님의 길잡이가 될 수 있는 토론 지도를 제공해드립니다. 화면의 왼쪽이 앞으로 탐험가님이 어떤 의견 영역으로 나갈 것인지 도움이 될 수 있는 토론 지도 입니다.</p>
+          <p>자, 이제 탐험을 위한 준비를 해볼까요?<br>준비는 총 3단계를 거칩니다. 이 과정을 통해서 의견들이 어떻게 만들어지고 연결될 수 있는지 살펴봅시다!</p>
         </div>
         <form>
           <div class="mt-5">
-            <button type="submit" class="btn btn-primary">좋아요!</a>
+            <button type="submit" class="btn btn-primary">시작하기</a>
           </div>
         </form>
       </div>
       <div id="aside-2" class="p-5 d-none transparent">
-        <h2>Step.1<br>나는 어디에 서 있을까?</h2>
+        <h2 data-reveal="0">Step.1<br>나는 어디에 서 있을까?</h2>
         <div class="mt-5">
-          <p>시작하기에 앞서 나는 어떤 의견을 지지하고 있는지 확인을 해봅시다. 평소 우리는 의식하지 않지만, 생각보다 확고한 의견을 가지고 있을 때가 많습니다.</p>
-          <p>이번 단계에서는 선택한 주제와 관련된 주장에 대해 동의 혹은 반대할 것인지 선택합니다.</p>
-          <p>상단의 메뉴에서 원하는 주제를 골라주세요!</p>
+          <p data-reveal="1">시작하기에 앞서 나는 어떤 의견을 지지하고 있는지 확인을 해봅시다. 평소 우리는 의식하지 않지만, 생각보다 확고한 의견을 가지고 있을 때가 많습니다.</p>
+          <p data-reveal="2">이번 단계에서는 선택한 주제와 관련된 주장에 대해 동의 혹은 반대할 것인지 선택합니다.</p>
+          <p data-reveal="3">상단의 메뉴에서 원하는 주제를 골라주세요!</p>
         </div>
         <form>
           <div class="mt-5">
-            <button type="submit" class="btn btn-primary" disabled>시작하기</a>
+            <button type="submit" class="btn btn-primary" data-reveal="3" disabled>시작하기</a>
           </div>
         </form>
       </div>
@@ -87,17 +87,17 @@
         </form>
       </div>
       <div id="aside-4" class="p-5 d-none transparent">
-        <h2>Step.2<br>나는 왜 여기에 서 있을까?</h2>
+        <h2 data-reveal="0">Step.2<br>나는 왜 여기에 서 있을까?</h2>
         <div class="mt-5">
-          <p>당신은 왜 그러한 선택을 했나요?</p>
-          <p>의견을 지지하는 것은 간단하지만, 구체적으로 왜 지지하는지에 대한 근거를 제시하는 것은 꽤 복잡한 과정입니다.</p>
-          <p>이번 단계에서는 새롭게 발견한 주장에 대해 구체적인 나의 생각을 덧붙일 것입니다. 밋밋한 지도에 나만의 색을 입히는 것이죠!</p>
-          <p>좌측 상단의 프로필을 클릭하여 나만의 색, 패턴을 설정해주세요. 그리고 앞의 주장에 대해 왜 그런 선택을 했는지 한 문장으로 답해봅시다.</p>
-          <p>당신의 토론 지도에 어떤 변화가 일어날까요?</p>
+          <p data-reveal="1">당신은 왜 그러한 선택을 했나요?</p>
+          <p data-reveal="1">의견을 지지하는 것은 간단하지만, 구체적으로 왜 지지하는지에 대한 근거를 제시하는 것은 꽤 복잡한 과정입니다.</p>
+          <p data-reveal="2">이번 단계에서는 새롭게 발견한 주장에 대해 구체적인 나의 생각을 덧붙일 것입니다. 밋밋한 지도에 나만의 색을 입히는 것이죠!</p>
+          <p data-reveal="2">좌측 상단의 프로필을 클릭하여 나만의 색, 패턴을 설정해주세요. 그리고 앞의 주장에 대해 왜 그런 선택을 했는지 한 문장으로 답해봅시다.</p>
+          <p data-reveal="3">당신의 토론 지도에 어떤 변화가 일어날까요?</p>
         </div>
         <form>
           <div class="mt-5">
-            <button type="submit" class="btn btn-primary" disabled>시작하기</a>
+            <button type="submit" class="btn btn-primary" data-reveal="3" disabled>시작하기</a>
           </div>
         </form>
       </div>
@@ -111,6 +111,53 @@
           </div>
           <div class="mt-5">
             <button type="submit" class="btn btn-primary">제출하기</button>
+          </div>
+        </form>
+      </div>
+      <div id="aside-6" class="p-5 d-none transparent">
+        <h2 data-reveal="0">Step.3<br>서로 다르지만 함께 서 있을 수 있어!</h2>
+        <div class="mt-5">
+          <p data-reveal="1">근거는 또 하나의 주장이 되어 다시 토론의 시작점으로 출발할 수 있습니다. 그런데, 주어진 질문에 대해 다른 사람들은 어떤 문장을 작성하였는지 궁금하지 않으신가요?</p>
+          <p data-reveal="2">동의/반대를 떠나서 어떤 근거들이 당신과 함께할 수 있는 건지 한 번 알아볼까요?</p>
+          <p data-reveal="3">랜덤하게 주어지는 근거들 중 동의하는 문장들을 선택해주세요.</p>
+        </div>
+        <form>
+          <div class="mt-5">
+            <button type="submit" class="btn btn-primary" data-reveal="3">시작하기</button>
+          </div>
+        </form>
+      </div>
+      <div id="aside-7" class="p-5 d-none transparent">
+        <h4>주제 - <span data-bind="topic-name"></span></h4>
+        <h2><span data-bind="topic-statement"></span></h2>
+        <form>
+          <div class="mt-5">
+            <div class="mt-1">
+              <input id="topic-reason-0" type="checkbox" name="topic-reason-0" class="topic-reason"><label for="topic-reason-0"><span data-bind="topic-reason-0"></span></label>
+            </div>
+            <div class="mt-1">
+              <input id="topic-reason-1" type="checkbox" name="topic-reason-1" class="topic-reason"><label for="topic-reason-1"><span data-bind="topic-reason-1"></span></label>
+            </div>
+            <div class="mt-1">
+              <input id="topic-reason-2" type="checkbox" name="topic-reason-2" class="topic-reason"><label for="topic-reason-2"><span data-bind="topic-reason-2"></span></label>
+            </div>
+            <div class="mt-1">
+              <input id="topic-reason-3" type="checkbox" name="topic-reason-3" class="topic-reason"><label for="topic-reason-3"><span data-bind="topic-reason-3"></span></label>
+            </div>
+          </div>
+          <div class="mt-5">
+            <button type="submit" class="btn btn-primary">제출하기</button>
+          </div>
+        </form>
+      </div>
+      <div id="aside-8" class="p-5 d-none transparent">
+        <h2 data-reveal="0">수고하셨습니다!</h2>
+        <div class="mt-5">
+          <p data-reveal="1">이제 더 넓은 토론의 영역을 탐험해봅시다.</p>
+        </div>
+        <form>
+          <div class="mt-5">
+            <button type="submit" class="btn btn-primary" data-reveal="1">좋아요!</button>
           </div>
         </form>
       </div>
@@ -138,7 +185,7 @@
 
       function stateUpdate(key, value) {
         state[key] = value;
-        $el = $('[data-bind="' + key + '"]').text(value);
+        return $('[data-bind="' + key + '"]').text(value);
       }
 
       function fadeOutIn(oldSelector, newSelector) {
@@ -150,7 +197,8 @@
           $old.addClass('d-none');
           $new.removeClass('d-none');
           setTimeout(function() {
-            $new.removeClass('transparent');
+            $new.removeClass('transparent')
+                .find('[data-reveal]').addClass('reveal');
           }, 50);
         }, 425);
       }
@@ -167,12 +215,16 @@
       });
 
       $('#topic-dropdown').on('hide.bs.dropdown', function(e) {
-        if (e.clickEvent === undefined)
+        if (e.clickEvent === undefined || e.clickEvent.target === undefined)
           return;
 
         var topic = tutorialData[e.clickEvent.target.id];
         stateUpdate('topic-name', topic.name);
         stateUpdate('topic-statement', topic.statement);
+        stateUpdate('topic-reason-0', topic.reasons[0].content).data('stance', topic.reasons[0].stance);
+        stateUpdate('topic-reason-1', topic.reasons[1].content).data('stance', topic.reasons[1].stance);
+        stateUpdate('topic-reason-2', topic.reasons[2].content).data('stance', topic.reasons[2].stance);
+        stateUpdate('topic-reason-3', topic.reasons[3].content).data('stance', topic.reasons[3].stance);
 
         $(this).find('.dropdown-toggle').text(topic.name);
 
@@ -199,34 +251,34 @@
       $('#aside-2 form').submit(function(e) {
         e.preventDefault();
 
-        $('#topic-dropdown .dropdown-toggle').dropdown('dispose'); // TODO: does not work.
+        $('#topic-dropdown .dropdown-toggle').dropdown('dispose').removeAttr('data-toggle');
         fadeOutIn('#aside-2', '#aside-3');
       });
 
       var $agree = $('#stance-agree'),
           $disagree = $('#stance-disagree'),
-          $form = $('#aside-3 form'),
-          $input = $form.find('input[name="stance"]'),
-          $submitButton = $form.find('button[type="submit"]');
+          $form3 = $('#aside-3 form'),
+          $input3 = $form3.find('input[name="stance"]'),
+          $submitButton3 = $form3.find('button[type="submit"]');
 
       $agree.click(function() {
         $agree.addClass('btn-outline-success').removeClass('btn-outline-secondary');
         $disagree.addClass('btn-outline-secondary').removeClass('btn-outline-danger');
-        $input.val('agree');
-        $submitButton.prop('disabled', false);
+        $input3.val('agree');
+        $submitButton3.prop('disabled', false);
       });
 
       $disagree.click(function() {
         $disagree.addClass('btn-outline-danger').removeClass('btn-outline-secondary');
         $agree.addClass('btn-outline-secondary').removeClass('btn-outline-success');
-        $input.val('disagree');
-        $submitButton.prop('disabled', false);
+        $input3.val('disagree');
+        $submitButton3.prop('disabled', false);
       });
 
-      $form.submit(function(e) {
+      $form3.submit(function(e) {
         e.preventDefault();
 
-        stateUpdate($input.val());
+        stateUpdate($input3.val());
 
         fadeOutIn('#aside-3', '#aside-4');
 
@@ -237,6 +289,25 @@
         e.preventDefault();
 
         fadeOutIn('#aside-4', '#aside-5');
+      });
+
+      $('#aside-5 form').submit(function(e) {
+        e.preventDefault();
+
+        // Firbase writing
+        fadeOutIn('#aside-5', '#aside-6');
+      });
+
+      $('#aside-6 form').submit(function(e) {
+        e.preventDefault();
+
+        fadeOutIn('#aside-6', '#aside-7');
+      });
+
+      $('#aside-7 form').submit(function(e) {
+        e.preventDefault();
+
+        fadeOutIn('#aside-7', '#aside-8');
       });
     </script>
   </body>

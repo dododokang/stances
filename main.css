@@ -1,5 +1,41 @@
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  color: #333;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #003ca0;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #003ca0;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  color: #333;
+}
+
+button[type="submit"] {
+  width: 160px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  background-color: #003ca0;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
 }
 
 body.index main section {
@@ -38,6 +74,57 @@ body.index aside.expanded {
   opacity: 0;
 }
 
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(45px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+.reveal {
+  animation: reveal 0.75s ease-out backwards;
+  will-change: opacity, transform;
+}
+
+[data-reveal="0"] {
+  animation-delay: 0.25s;
+}
+
+[data-reveal="1"] {
+  animation-delay: 0.5s;
+}
+
+[data-reveal="2"] {
+  animation-delay: 0.75s;
+}
+
+[data-reveal="3"] {
+  animation-delay: 1s;
+}
+
 .p-aside {
   padding: 3rem 50% 3rem 3rem;
+}
+
+.bg-primary {
+  background-color: #003ca0 !important;
+}
+
+.topic-reason {
+  display: none;
+}
+
+.topic-reason + label {
+  height: 48px;
+  border: 1px solid #000;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.topic-reason:checked + label {
+  border-color: blue;
 }
