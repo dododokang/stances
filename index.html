@@ -306,7 +306,7 @@
         fadeOutIn('#aside-4', '#aside-5');
       });
 
-      $('#aside-5 textarea').input(function(e) {
+      $('#aside-5 textarea').on('input', function(e) {
         $('#aside-5 button[type="submit"]').prop('disabled', false).removeClass('d-none');
       });
 
