@@ -1,23 +1,23 @@
 {
   "topic-0": {
     "name": "정치",
-    "statement": "일부 범죄의 경우, 사형집행을 채택할 수 있어야 한다.",
+    "statement": "청소년들에게도 투표권을 부여해야 한다.",
     "reasons": [
       {
         "stance": "disagree",
-        "content": "모든 판결에는 오판이 있을 가능성이 있다."
+        "content": "청소년은 정치적 판단을 내리기에는 미숙하다."
       },
       {
         "stance": "agree",
-        "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
+        "content": "정책에 청소년의 의견도 반영해야 한다."
       },
       {
         "stance": "disagree",
-        "content": "생명권은 모두가 존중 받아야 한다."
+        "content": "교육 현장이 정치판으로 변질할 수 있다."
       },
       {
         "stance": "agree",
-        "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
+        "content": "청소년들도 국민으로서 권리를 보장받아야 한다."
       }
     ]
   },
@@ -45,23 +45,23 @@
   },
   "topic-2": {
     "name": "문화",
-    "statement": "주제 메인 명제",
+    "statement": "1인 미디어에도 강력한 규제가 필요하다.",
     "reasons": [
       {
         "stance": "disagree",
-        "content": "모든 판결에는 오판이 있을 가능성이 있다."
+        "content": "강력한 규제는 표현의 자유를 해친다."
       },
       {
         "stance": "agree",
-        "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
+        "content": "1인 미디어는 자율적인 규제를 충분히 하지 못한다."
       },
       {
         "stance": "disagree",
-        "content": "생명권은 모두가 존중 받아야 한다."
+        "content": "1인 미디어에 적절한 규제방식을 결정하기 어렵다."
       },
       {
         "stance": "agree",
-        "content": "사형이 사적 복수의 악순환을 사단할 수 있다."
+        "content": "표현의 자유보다 개인의 권리가 우선이어야 한다."
       }
     ]
   },
