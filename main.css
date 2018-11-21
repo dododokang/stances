@@ -99,13 +99,13 @@ body.index aside.expanded {
   padding: 2.25rem 2.25rem 2.25rem 0.75rem;
 }
 
-[id^="aside"] {
+.will-fade {
   transition: opacity 425ms ease-in-out;
   will-change: opacity;
 }
 
-[id^="aside"].transparent {
-  opacity: 0;
+.will-fade.transparent {
+  opacity: 0 !important;
 }
 
 @keyframes reveal {
@@ -300,4 +300,32 @@ body.index aside.expanded {
 
 #ellipse-myself.grad-3 ellipse {
   fill: url(#grad-3);
+}
+
+#ellipse-0 {
+  position: absolute;
+  bottom: 368px;
+  left: -26px;
+  opacity: 0.9;
+}
+
+#ellipse-1 {
+  position: absolute;
+  bottom: 433px;
+  left: 480px;
+  opacity: 0.7;
+}
+
+#ellipse-2 {
+  position: absolute;
+  bottom: 499px;
+  left: 178px;
+  opacity: 0.5;
+}
+
+#ellipse-3 {
+  position: absolute;
+  bottom: 564px;
+  left: 354px;
+  opacity: 0.3;
 }
