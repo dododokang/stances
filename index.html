@@ -30,7 +30,7 @@
         <section class="p-aside">
           <div class="position-relative h-100 p-5">
             <div id="topic-dropdown" class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">주제 선택하기</button>
+              <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">주제 선택하기</button>
               <div class="dropdown-menu">
                 <button id="topic-0" class="dropdown-item" type="button"></button>
                 <button id="topic-1" class="dropdown-item" type="button"></button>
@@ -281,7 +281,7 @@
             break;
           }
         }
-        $ellipseMyself.addClass(paletteTemp);
+        $ellipseMyself.addClass('fill ' + paletteTemp);
         $('#grad-select').prop('disabled', false);
       });
 
@@ -379,7 +379,6 @@
         e.preventDefault();
 
         $('.bg-primary').addClass('bg-darker').removeClass('bg-primary');
-        $ellipseMyself.addClass('fill');
         $('#grad-actions').removeClass('d-none');
         stateUpdate('stance', $input3.val());
 

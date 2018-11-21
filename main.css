@@ -229,6 +229,7 @@ body.index aside.expanded {
 #ellipse-myself.fill ellipse {
   fill: #fff;
   stroke: transparent !important;
+  transition: 250ms fill ease-out;
 }
 
 #ellipse-myself.grad-0 ellipse {
