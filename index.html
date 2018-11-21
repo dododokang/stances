@@ -3,31 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500,700,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,500,700,900">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
   </head>
   <body class="index">
     <main>
-      <div id="main-0" class="bg-secondary">
-        <section class="p-aside" style="background-image: url(splash.jpg);">
-          <div class="position-relative h-100 p-5">
-            <h1>Hello, world!</h1>
-          </div>
-        </section>
-        <section class="p-aside">
-          <div class="position-relative h-100 p-5">
-            <h1>Hello, world!</h1>
-          </div>
-        </section>
-        <section class="p-aside">
-          <div class="position-relative h-100 p-5">
-            <h1>Hello, world!</h1>
+      <div id="main-0" class="bg-primary">
+        <section class="p-aside will-fade">
+          <div class="position-relative bg-splash" style="background-image: url(splash.png); overflow: hidden;">
+            <img src="hand0.png" style="position: absolute; top: -28px; left: -42px;">
+            <img src="hand1.png" style="position: absolute; top: -13px; right: -19px;">
+            <img src="hand2.png" style="position: absolute; bottom: -30px; left: -50px;">
+            <img src="hand3.png" style="position: absolute; bottom: -48px; right: -36px;">
           </div>
         </section>
       </div>
-      <div id="main-1" class="bg-transition bg-primary text-center d-none">
-        <section class="p-aside">
+      <div id="main-1" class="bg-primary bg-transition text-center">
+        <section class="p-aside will-fade d-none transparent">
           <div class="position-relative h-100 p-4 text-center">
             <div id="topic-dropdown" class="dropdown">
               <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">주제 선택하기</button>
@@ -79,15 +72,18 @@
         </section>
       </div>
     </main>
-    <aside class="shadow-lg">
-      <div id="aside-0" class="p-5 will-fade text-center">
-        <h2>사용자 등록</h2>
-        <form>
-          <div class="mt-5">
-            <input type="text" name="name">
+    <aside class="shadow-lg expanded fixed">
+      <div id="aside-0" class="will-fade text-center">
+        <img src="logo.png" alt="Stances" width="100">
+        <div class="mt-5">
+          <h1>토론의<br>세계를<br>탐험하세요</h1>
+        </div>
+        <form style="margin-top: 176px;">
+          <div>
+            <input type="text" name="name" placeholder="이름을 입력하세요." style="width: 260px; height: 34px; font-size: 14px; text-align: center; border: 2px solid #7f7f7f; border-radius: 17px;">
           </div>
-          <div class="mt-5">
-            <button type="submit" class="btn btn-primary position-static">시작하기</button>
+          <div style="margin-top: 32px;">
+            <button type="submit" class="btn btn-primary position-static" style="width: 120px; height: 34px; font-size: 14px;">등록</button>
           </div>
         </form>
       </div>
@@ -365,8 +361,7 @@
       $('#aside-1 form').submit(function(e) {
         e.preventDefault();
 
-        $('#main-1').removeClass('d-none');
-        $('#main-0').addClass('d-none');
+        fadeOutIn('#main-0 section', '#main-1 section');
         fadeOutIn('#aside-1', '#aside-2');
       });
 

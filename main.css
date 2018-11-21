@@ -4,6 +4,13 @@ body {
   color: #333;
 }
 
+h1 {
+  font-size: 70px;
+  font-weight: 100;
+  line-height: 1.2;
+  color: #003ca0;
+}
+
 h2 {
   font-size: 36px;
   font-weight: 900;
@@ -76,8 +83,6 @@ section {
   height: 100vh;
   padding-right: 50%;
   color: white;
-  background-position: center;
-  background-size: cover;
 }
 
 aside {
@@ -172,6 +177,13 @@ body.index aside.expanded {
 
 .bg-darker {
   background-color: #001e50 !important;
+}
+
+.bg-splash {
+  height: 100%;
+  background-image: url(splash.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .btn-outline-success {
