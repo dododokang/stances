@@ -11,26 +11,57 @@
     <main>
       <div id="main-0" class="bg-secondary">
         <section class="p-aside" style="background-image: url(splash.jpg);">
-          <h1>Hello, world!</h1>
+          <div class="position-relative h-100 p-5">
+            <h1>Hello, world!</h1>
+          </div>
         </section>
         <section class="p-aside">
-          <h1>Hello, world!</h1>
+          <div class="position-relative h-100 p-5">
+            <h1>Hello, world!</h1>
+          </div>
         </section>
         <section class="p-aside">
-          <h1>Hello, world!</h1>
+          <div class="position-relative h-100 p-5">
+            <h1>Hello, world!</h1>
+          </div>
         </section>
       </div>
-      <div id="main-1" class="bg-primary text-center d-none">
+      <div id="main-1" class="bg-transition bg-primary text-center d-none">
         <section class="p-aside">
-          <div id="topic-dropdown" class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">주제 선택하기</button>
-            <div class="dropdown-menu">
-              <button id="topic-0" class="dropdown-item" type="button"></button>
-              <button id="topic-1" class="dropdown-item" type="button"></button>
-              <button id="topic-2" class="dropdown-item" type="button"></button>
-              <button id="topic-3" class="dropdown-item" type="button"></button>
-              <button id="topic-4" class="dropdown-item" type="button"></button>
+          <div class="position-relative h-100 p-5">
+            <div id="topic-dropdown" class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">주제 선택하기</button>
+              <div class="dropdown-menu">
+                <button id="topic-0" class="dropdown-item" type="button"></button>
+                <button id="topic-1" class="dropdown-item" type="button"></button>
+                <button id="topic-2" class="dropdown-item" type="button"></button>
+                <button id="topic-3" class="dropdown-item" type="button"></button>
+              </div>
             </div>
+            <div id="grad-actions" class="d-none">
+              <button id="grad-shuffle" type="button" class="btn btn-outline-light">Refresh</button><button id="grad-select" type="button" class="btn btn-outline-light" disabled>Confirm</button>
+            </div>
+            <svg id="ellipse-myself" xmlns="http://www.w3.org/2000/svg" width="360" height="120" class="d-none">
+              <defs>
+                <linearGradient id="grad-0" x1="0" x2="1" >
+                  <stop offset="0%" />
+                  <stop offset="100%" />
+                </linearGradient>
+                <linearGradient id="grad-1" x1="0" x2="1" >
+                  <stop offset="0%" />
+                  <stop offset="100%" />
+                </linearGradient>
+                <linearGradient id="grad-2" x1="0" x2="1" >
+                  <stop offset="0%" />
+                  <stop offset="100%" />
+                </linearGradient>
+                <linearGradient id="grad-3" x1="0" x2="1" >
+                  <stop offset="0%" />
+                  <stop offset="100%" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="180" cy="60" rx="179" ry="59" stroke="#fff" stroke-width="2" fill="transparent" />
+            </svg>
           </div>
         </section>
       </div>
@@ -104,7 +135,7 @@
         </div>
         <form>
           <div>
-            <button type="submit" class="btn btn-primary reveal-static" data-reveal="4" disabled>시작하기</a>
+            <button type="submit" class="btn btn-primary d-none" disabled>시작하기</a>
           </div>
         </form>
       </div>
@@ -188,6 +219,9 @@
         apiKey: "AIzaSyCWO7N60K1Ph6cHKyblHOQ-4gwqBKoyYLs"
       });
 
+
+      // Init and functions
+
       var tutorialData;
 
       $.getJSON('tutorial.json', function(data) {
@@ -218,6 +252,52 @@
         }, 425);
       }
 
+
+      // Colors
+
+      var palette = {
+        'grad-0': { agree: '#4bc0c8', disagree: '#feac5e' },
+        'grad-1': { agree: '#30e8bf', disagree: '#ff8235' },
+        'grad-2': { agree: '#0aa6bc', disagree: '#ff4b1f' },
+        'grad-3': { agree: '#0abfbc', disagree: '#fc354c' }
+      }
+
+      for (var key in palette) {
+        $('#' + key).find('stop:first-of-type').css('stop-color', palette[key].agree);
+        $('#' + key).find('stop:last-of-type').css('stop-color', palette[key].disagree);
+      }
+
+      var paletteTemp = null,
+          $ellipseMyself = $('#ellipse-myself');
+
+      $('#grad-shuffle').click(function() {
+        if (paletteTemp || $(this).prop('disabled'))
+          $ellipseMyself.removeClass(paletteTemp);
+
+        while (true) {
+          var candidate = 'grad-' +  Math.floor(Math.random() * 4);
+          if (paletteTemp !== candidate) {
+            paletteTemp = candidate;
+            break;
+          }
+        }
+        $ellipseMyself.addClass(paletteTemp);
+        $('#grad-select').prop('disabled', false);
+      });
+
+      $('#grad-select').click(function() {
+        if (!paletteTemp || $(this).prop('disabled'))
+          return;
+
+        state.palette = palette[paletteTemp];
+        $ellipseMyself.removeClass(paletteTemp);
+        $('#grad-shuffle').prop('disabled', true);
+        $('#aside-4 button[type="submit"]').prop('disabled', false).removeClass('d-none');
+      });
+
+
+      // Landing scroll
+
       var firstSection = $('main section:first-child')[0],
           $aside = $('aside');
 
@@ -228,6 +308,9 @@
         else
           $aside.not('.fixed').removeClass('expanded');
       });
+
+
+      // Tutorial
 
       $('#topic-dropdown').on('hide.bs.dropdown', function(e) {
         if (e.clickEvent === undefined || e.clickEvent.target === undefined)
@@ -279,6 +362,7 @@
       $agree.click(function() {
         $agree.addClass('btn-outline-success').removeClass('btn-outline-secondary');
         $disagree.addClass('btn-outline-secondary').removeClass('btn-outline-danger');
+        $ellipseMyself.removeClass('d-none');
         $input3.val('agree');
         $submitButton3.prop('disabled', false).removeClass('d-none');
       });
@@ -286,6 +370,7 @@
       $disagree.click(function() {
         $disagree.addClass('btn-outline-danger').removeClass('btn-outline-secondary');
         $agree.addClass('btn-outline-secondary').removeClass('btn-outline-success');
+        $ellipseMyself.removeClass('d-none');
         $input3.val('disagree');
         $submitButton3.prop('disabled', false).removeClass('d-none');
       });
@@ -293,15 +378,19 @@
       $form3.submit(function(e) {
         e.preventDefault();
 
-        stateUpdate($input3.val());
+        $('.bg-primary').addClass('bg-darker').removeClass('bg-primary');
+        $ellipseMyself.addClass('fill');
+        $('#grad-actions').removeClass('d-none');
+        stateUpdate('stance', $input3.val());
 
         fadeOutIn('#aside-3', '#aside-4');
-
-        $('#aside-4 button[type="submit"]').prop('disabled', false).removeClass('d-none'); // TODO: move to config
       });
 
       $('#aside-4 form').submit(function(e) {
         e.preventDefault();
+
+        $('.bg-darker').addClass('bg-primary').removeClass('bg-darker');
+        $('#grad-actions').addClass('d-none');
 
         fadeOutIn('#aside-4', '#aside-5');
       });
@@ -312,6 +401,8 @@
 
       $('#aside-5 form').submit(function(e) {
         e.preventDefault();
+
+        $ellipseMyself.find('ellipse').css('fill', state.palette[state.stance]).removeAttr('fill');
 
         // Firbase writing
         fadeOutIn('#aside-5', '#aside-6');
