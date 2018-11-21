@@ -28,7 +28,7 @@
       </div>
       <div id="main-1" class="bg-transition bg-primary text-center d-none">
         <section class="p-aside">
-          <div class="position-relative h-100 p-5">
+          <div class="position-relative h-100 p-4 text-center">
             <div id="topic-dropdown" class="dropdown">
               <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">주제 선택하기</button>
               <div class="dropdown-menu">
@@ -39,7 +39,8 @@
               </div>
             </div>
             <div id="grad-actions" class="d-none">
-              <button id="grad-shuffle" type="button" class="btn btn-outline-light">Refresh</button><button id="grad-select" type="button" class="btn btn-outline-light" disabled>Confirm</button>
+              <button id="grad-shuffle" type="button" class="btn btn-outline-light"><img src="shuffle.svg" alt="Shuffle" width="14px" height="12px"></button
+             ><button id="grad-select" type="button" class="btn btn-outline-light" disabled><img src="select.svg" alt="Confirm" width="15px" height="10px"></button>
             </div>
             <svg id="ellipse-myself" xmlns="http://www.w3.org/2000/svg" width="360" height="120" class="d-none">
               <defs>
@@ -145,7 +146,7 @@
           <h3 style="opacity: 0.4;"><span data-bind="topic-statement"></span></h3>
         </div>
         <form>
-          <div class="mt-5 pl-1 pr-5">
+          <div class="mt-5 pl-1">
             <h3>반대하는 근거로</h3>
             <h3><textarea name="reason" placeholder="‘~다’로 끝나는 한 문장으로 적어주세요." rows="2" required></textarea>가<br>있다.</h3>
           </div>
@@ -291,7 +292,8 @@
 
         state.palette = palette[paletteTemp];
         $ellipseMyself.removeClass(paletteTemp);
-        $('#grad-shuffle').prop('disabled', true);
+        $(this).addClass('d-none');
+        $('#grad-shuffle').addClass('d-none');
         $('#aside-4 button[type="submit"]').prop('disabled', false).removeClass('d-none');
       });
 

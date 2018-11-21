@@ -63,7 +63,7 @@ input[name="stance"] ~ button {
 }
 
 textarea {
-  width: 392px;
+  width: 420px;
   padding: 0 1.5rem 0.25rem;
   margin: 0.25rem 1rem 0.5rem -0.1rem;
   font-weight: 900;
@@ -196,6 +196,41 @@ body.index aside.expanded {
   border-color: #ff7d7d;
 }
 
+.dropdown {
+  display: inline-block;
+  width: 320px;
+}
+
+.dropdown-toggle,
+.dropdown-menu {
+  width: 100%;
+  font-size: 14px;
+}
+
+.dropdown-toggle {
+  height: 36px;
+  line-height: 1;
+  border-radius: 18px;
+}
+
+.dropdown-menu {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+}
+
+.dropdown-item {
+  text-align: center;
+  line-height: 1.65;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
 .topic-reason {
   display: none;
 }
@@ -217,6 +252,25 @@ body.index aside.expanded {
 .topic-reason:checked + label {
   color: #003ca0;
   border-color: #003ca0;
+}
+
+#grad-actions {
+  margin-top: calc(100% - 288px);
+}
+
+#grad-actions button {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  margin-left: 16px;
+  padding: 0;
+  background-color: transparent !important;
+  border-width: 2px;
+  border-radius: 20px;
+}
+
+#grad-actions button img {
+  vertical-align: 0;
 }
 
 #ellipse-myself {
