@@ -22,7 +22,12 @@
       <div id="main-1" class="bg-primary bg-transition text-center">
         <section class="p-aside will-fade d-none transparent">
           <div class="position-relative h-100 p-4 text-center">
-            <div id="topic-dropdown" class="dropdown">
+            <div id="profile" class="float-left ml-2">
+              <svg id="circle-profile" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                <circle cx="20" cy="20" r="20" fill="#fff" />
+              </svg><span class="d-inline-block ml-3" style="font-size: 14px; vertical-align: -2px;" data-bind="name"></span>
+            </div>
+            <div id="topic-dropdown" class="dropdown mt-1 mr-3">
               <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">주제 선택하기</button>
               <div class="dropdown-menu">
                 <button id="topic-0" class="dropdown-item" type="button"></button>
@@ -35,38 +40,70 @@
               <button id="grad-shuffle" type="button" class="btn btn-outline-light"><img src="shuffle.svg" alt="Shuffle" width="14px" height="12px"></button
              ><button id="grad-select" type="button" class="btn btn-outline-light" disabled><img src="select.svg" alt="Confirm" width="15px" height="10px"></button>
             </div>
-            <svg id="ellipse-myself" xmlns="http://www.w3.org/2000/svg" width="360" height="120" class="d-none">
+            <svg id="ellipse-myself" class="svg-ellipse d-none" xmlns="http://www.w3.org/2000/svg" width="360" height="120">
               <defs>
-                <linearGradient id="grad-0" x1="0" x2="1" >
+                <linearGradient id="grad-0">
                   <stop offset="0%" />
                   <stop offset="100%" />
                 </linearGradient>
-                <linearGradient id="grad-1" x1="0" x2="1" >
+                <linearGradient id="grad-1">
                   <stop offset="0%" />
                   <stop offset="100%" />
                 </linearGradient>
-                <linearGradient id="grad-2" x1="0" x2="1" >
+                <linearGradient id="grad-2">
                   <stop offset="0%" />
                   <stop offset="100%" />
                 </linearGradient>
-                <linearGradient id="grad-3" x1="0" x2="1" >
+                <linearGradient id="grad-3">
                   <stop offset="0%" />
                   <stop offset="100%" />
                 </linearGradient>
               </defs>
               <ellipse cx="180" cy="60" rx="179" ry="59" stroke="#fff" stroke-width="2" fill="transparent" />
             </svg>
-            <svg id="ellipse-0" class="will-fade d-none transparent" xmlns="http://www.w3.org/2000/svg" width="182" height="54">
+            <svg id="ellipse-0" class="svg-ellipse will-fade d-none transparent" xmlns="http://www.w3.org/2000/svg" width="182" height="54">
+              <ellipse cx="91" cy="27" rx="91" ry="27" stroke="transparent" fill="#003ca0" />
               <ellipse cx="91" cy="27" rx="91" ry="27" stroke="transparent" />
             </svg>
-            <svg id="ellipse-1" class="will-fade d-none transparent" xmlns="http://www.w3.org/2000/svg" width="130" height="36">
+            <svg id="ellipse-1" class="svg-ellipse will-fade d-none transparent" xmlns="http://www.w3.org/2000/svg" width="130" height="36">
+              <ellipse cx="65" cy="18" rx="65" ry="18" stroke="transparent" fill="#003ca0" />
               <ellipse cx="65" cy="18" rx="65" ry="18" stroke="transparent" />
             </svg>
-            <svg id="ellipse-2" class="will-fade d-none transparent" xmlns="http://www.w3.org/2000/svg" width="92" height="24">
+            <svg id="ellipse-2" class="svg-ellipse will-fade d-none transparent" xmlns="http://www.w3.org/2000/svg" width="92" height="24">
+              <ellipse cx="46" cy="12" rx="46" ry="12" stroke="transparent" fill="#003ca0" />
               <ellipse cx="46" cy="12" rx="46" ry="12" stroke="transparent" />
             </svg>
-            <svg id="ellipse-3" class="will-fade d-none transparent" xmlns="http://www.w3.org/2000/svg" width="62" height="14">
+            <svg id="ellipse-3" class="svg-ellipse will-fade d-none transparent" xmlns="http://www.w3.org/2000/svg" width="62" height="14">
+              <ellipse cx="31" cy="7" rx="31" ry="7" stroke="transparent" fill="#003ca0" />
               <ellipse cx="31" cy="7" rx="31" ry="7" stroke="transparent" />
+            </svg>
+            <svg id="lines" class="svg-lines position-absolute d-none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="top: 0; left: 0; transform: scaleY(-1);">
+              <defs>
+                <linearGradient id="lines__grad-0">
+                  <stop offset="98%" stop-color="transparent" />
+                  <stop offset="99%" />
+                  <stop offset="100%" />
+                </linearGradient>
+                <linearGradient id="lines__grad-1">
+                  <stop offset="98%" stop-color="transparent" />
+                  <stop offset="99%" />
+                  <stop offset="100%" />
+                </linearGradient>
+                <linearGradient id="lines__grad-2">
+                  <stop offset="98%" stop-color="transparent" />
+                  <stop offset="99%" />
+                  <stop offset="100%" />
+                </linearGradient>
+                <linearGradient id="lines__grad-3">
+                  <stop offset="98%" stop-color="transparent" />
+                  <stop offset="99%" />
+                  <stop offset="100%" />
+                </linearGradient>
+              </defs>
+              <line id="lines__line-0" x1="320" y1="97" x2="65" y2="368" stroke="url(#lines__grad-0)" stroke-width="4" style="opacity: 0.5;" />
+              <line id="lines__line-1" x1="320" y1="97" x2="545" y2="433" stroke="url(#lines__grad-1)" stroke-width="4" style="opacity: 0.5;" />
+              <line id="lines__line-2" x1="320" y1="97" x2="224" y2="499" stroke="url(#lines__grad-2)" stroke-width="4" style="opacity: 0.5;" />
+              <line id="lines__line-3" x1="320" y1="97" x2="385" y2="564" stroke="url(#lines__grad-3)" stroke-width="4" style="opacity: 0.5;" />
             </svg>
           </div>
         </section>
@@ -212,7 +249,7 @@
         </div>
         <form>
           <div>
-            <button type="submit" class="btn btn-primary" data-reveal="2">좋아요!</button>
+            <button type="submit" class="btn btn-primary reveal-static" data-reveal="2">좋아요!</button>
           </div>
         </form>
       </div>
@@ -282,8 +319,8 @@
       }
 
       for (var key in palette) {
-        $('#' + key).find('stop:first-of-type').css('stop-color', palette[key].agree);
-        $('#' + key).find('stop:last-of-type').css('stop-color', palette[key].disagree);
+        $('#' + key).find('stop:first-of-type').attr('stop-color', palette[key].agree);
+        $('#' + key).find('stop:last-of-type').attr('stop-color', palette[key].disagree);
       }
 
       var paletteTemp = null,
@@ -300,7 +337,7 @@
             break;
           }
         }
-        $ellipseMyself.addClass('fill ' + paletteTemp);
+        $ellipseMyself.addClass(paletteTemp).find('ellipse').attr('stroke', 'transparent');
         $('#grad-select').prop('disabled', false);
       });
 
@@ -310,8 +347,9 @@
 
         state.selectedColorSet = palette[paletteTemp];
         $ellipseMyself.removeClass(paletteTemp);
-        $(this).addClass('d-none');
-        $('#grad-shuffle').addClass('d-none');
+        $('#circle-profile').addClass(paletteTemp);
+        $('#grad-actions').addClass('d-none');
+        $('.bg-darker').addClass('bg-primary').removeClass('bg-darker');
         $('#aside-4 button[type="submit"]').prop('disabled', false).removeClass('d-none');
       });
 
@@ -346,6 +384,7 @@
 
         $(this).find('.dropdown-toggle').text(topic.name);
 
+        $ellipseMyself.removeClass('d-none');
         $('#aside-2 button[type="submit"]').prop('disabled', false).removeClass('d-none');
       });
 
@@ -381,7 +420,7 @@
       $agree.click(function() {
         $agree.addClass('btn-outline-success').removeClass('btn-outline-secondary');
         $disagree.addClass('btn-outline-secondary').removeClass('btn-outline-danger');
-        $ellipseMyself.removeClass('d-none');
+        $ellipseMyself.addClass('fill');
         $input3.val('agree');
         $submitButton3.prop('disabled', false).removeClass('d-none');
       });
@@ -389,7 +428,7 @@
       $disagree.click(function() {
         $disagree.addClass('btn-outline-danger').removeClass('btn-outline-secondary');
         $agree.addClass('btn-outline-secondary').removeClass('btn-outline-success');
-        $ellipseMyself.removeClass('d-none');
+        $ellipseMyself.addClass('fill');
         $input3.val('disagree');
         $submitButton3.prop('disabled', false).removeClass('d-none');
       });
@@ -407,9 +446,6 @@
       $('#aside-4 form').submit(function(e) {
         e.preventDefault();
 
-        $('.bg-darker').addClass('bg-primary').removeClass('bg-darker');
-        $('#grad-actions').addClass('d-none');
-
         fadeOutIn('#aside-4', '#aside-5');
       });
 
@@ -422,6 +458,7 @@
 
         var color = state.selectedColorSet[state.stance];
         $ellipseMyself.find('ellipse').css('fill', color).removeAttr('fill');
+        $('#lines linearGradient stop:nth-of-type(2)').attr('stop-color', color);
         state.usedColors = [color];
 
         // Firbase writing
@@ -431,6 +468,8 @@
       $('#aside-6 form').submit(function(e) {
         e.preventDefault();
 
+        $ellipseMyself.addClass('moved');
+
         fadeOutIn('#aside-6', '#aside-7');
       });
 
@@ -438,6 +477,7 @@
         var stance = $('[data-bind="' + $(this).attr('name') + '"]').data('stance'),
             ellipseSelector = '#ellipse-' + $(this).data('reasonId'),
             $ellipse = $(ellipseSelector),
+            $linesGrad = $('#lines__grad-' + $(this).data('reasonId')),
             color;
 
         if (!$ellipse.data('color')) {
@@ -449,7 +489,8 @@
 
           color = color || 'white';
           $ellipse.data('color', color)
-                  .find('ellipse').css('fill', color);
+                  .find('ellipse').not('[fill]').attr('fill', color);
+          $linesGrad.find('stop:nth-of-type(3)').attr('stop-color', color);
           state.usedColors.push(color);
         }
 
@@ -461,6 +502,17 @@
 
       $('#aside-7 form').submit(function(e) {
         e.preventDefault();
+
+        $('#lines').removeClass('d-none');
+
+        var i = 0;
+        var refreshId = setInterval(function() {
+          ++i;
+          $('#lines linearGradient stop:nth-of-type(1)').attr('offset', 98 - i + '%');
+          $('#lines linearGradient stop:nth-of-type(2)').attr('offset', 99 - i + '%');
+          if (i >= 98)
+            clearInterval(refreshId);
+        }, 4);
 
         fadeOutIn('#aside-7', '#aside-8');
       });

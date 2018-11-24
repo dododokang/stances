@@ -216,7 +216,7 @@ body.index aside.expanded {
 .dropdown-toggle,
 .dropdown-menu {
   width: 100%;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .dropdown-toggle {
@@ -285,59 +285,89 @@ body.index aside.expanded {
   vertical-align: 0;
 }
 
+.svg-ellipse {
+  z-index: 101;
+}
+
+.svg-lines {
+  z-index: 100;
+}
+
 #ellipse-myself {
   position: absolute;
   bottom: 108px;
   left: 50%;
   margin-left: -180px;
+  transition: bottom 1s ease-in-out, left 1s ease-in-out;
+  will-change: bottom, left;
+}
+
+#ellipse-myself.moved {
+  bottom: 37px;
+  left: 320px;
 }
 
 #ellipse-myself.fill ellipse {
   fill: #fff;
-  stroke: transparent !important;
-  transition: 250ms fill ease-out;
+  transition: fill 250ms ease-out;
 }
 
-#ellipse-myself.grad-0 ellipse {
+#ellipse-myself.grad-0 ellipse,
+#circle-profile.grad-0 circle {
   fill: url(#grad-0);
 }
 
-#ellipse-myself.grad-1 ellipse {
+#ellipse-myself.grad-1 ellipse,
+#circle-profile.grad-1 circle {
   fill: url(#grad-1);
 }
 
-#ellipse-myself.grad-2 ellipse {
+#ellipse-myself.grad-2 ellipse,
+#circle-profile.grad-2 circle {
   fill: url(#grad-2);
 }
 
-#ellipse-myself.grad-3 ellipse {
+#ellipse-myself.grad-3 ellipse,
+#circle-profile.grad-3 circle {
   fill: url(#grad-3);
 }
 
 #ellipse-0 {
   position: absolute;
-  bottom: 368px;
+  bottom: 341px;
   left: -26px;
+}
+
+#ellipse-0 ellipse:not(:first-of-type) {
   opacity: 0.9;
 }
 
 #ellipse-1 {
   position: absolute;
-  bottom: 433px;
+  bottom: 415px;
   left: 480px;
+}
+
+#ellipse-1 ellipse:not(:first-of-type) {
   opacity: 0.7;
 }
 
 #ellipse-2 {
   position: absolute;
-  bottom: 499px;
+  bottom: 487px;
   left: 178px;
+}
+
+#ellipse-2 ellipse:not(:first-of-type) {
   opacity: 0.5;
 }
 
 #ellipse-3 {
   position: absolute;
-  bottom: 564px;
+  bottom: 557px;
   left: 354px;
+}
+
+#ellipse-3 ellipse:not(:first-of-type) {
   opacity: 0.3;
 }
