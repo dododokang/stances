@@ -38,10 +38,12 @@
                 <button id="topic-2" class="dropdown-item" type="button"></button>
                 <button id="topic-3" class="dropdown-item" type="button"></button>
               </div>
+              <div class="click-indicator"></div>
             </div>
             <div id="grad-actions" class="d-none">
               <button id="grad-shuffle" type="button" class="btn btn-outline-light"><img src="shuffle.svg" alt="Shuffle" width="14px" height="12px"></button
              ><button id="grad-select" type="button" class="btn btn-outline-light" disabled><img src="select.svg" alt="Confirm" width="15px" height="10px"></button>
+              <div class="click-indicator"></div>
             </div>
             <svg id="ellipse-myself" class="svg-ellipse d-none" xmlns="http://www.w3.org/2000/svg" width="360" height="120">
               <defs>
@@ -330,6 +332,8 @@
           $ellipseMyself = $('#ellipse-myself');
 
       $('#grad-shuffle').click(function() {
+        $(this).siblings('.click-indicator').addClass('d-none');
+
         if (paletteTemp || this.disabled)
           $ellipseMyself.removeClass(paletteTemp);
 
@@ -372,6 +376,10 @@
 
 
       // Tutorial
+
+      $('#topic-dropdown').on('show.bs.dropdown', function(e) {
+        $(this).find('.click-indicator').addClass('d-none');
+      });
 
       $('#topic-dropdown').on('hide.bs.dropdown', function(e) {
         if (e.clickEvent === undefined || e.clickEvent.target === undefined)
