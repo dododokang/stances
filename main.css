@@ -293,29 +293,25 @@ body.index aside.expanded {
 
 .click-indicator {
   position: absolute;
-  z-index: 1000;
+  top: 50%;
+  left: 50%;
   width: 40px;
   height: 40px;
+  margin-top: -20px;
   background-color: #ffff0c;
   border-radius: 50%;
   animation: indicate 0.7s ease-in 0.3s infinite alternate both;
 }
 
 #topic-dropdown > .click-indicator {
-  top: 50%;
-  left: 50%;
-  margin-top: -20px;
   margin-left: -20px;
 }
 
 #grad-actions > .click-indicator {
-  top: 50%;
-  left: 50%;
-  margin-top: -20px;
   margin-left: -56px;
+  z-index: 1000;
 }
 
-#topic-dropdown > :not(.click-indicator),
 #grad-actions > :not(.click-indicator) {
   position: relative;
   z-index: 1001;
