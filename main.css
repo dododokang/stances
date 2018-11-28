@@ -266,6 +266,47 @@ body.index aside.expanded {
   border-color: #003ca0;
 }
 
+@keyframes hand-0 {
+  from { top: -130px; left: -165px; }
+    to { top:  -28px; left:  -42px; }
+}
+
+@keyframes hand-1 {
+  from { top: -133px; right: -155px; }
+    to { top:  -13px; right:  -19px; }
+}
+
+@keyframes hand-2 {
+  from { bottom: -232px; left: -130px; }
+    to { bottom:  -30px; left:  -50px; }
+}
+
+@keyframes hand-3 {
+  from { bottom: -253px; right: -175px; }
+    to { bottom:  -48px; right:  -36px; }
+}
+
+.hand {
+  position: absolute;
+  animation: 0.8s ease-out 0.4s both;
+}
+
+#hand-0 {
+  animation-name: hand-0;
+}
+
+#hand-1 {
+  animation-name: hand-1;
+}
+
+#hand-2 {
+  animation-name: hand-2;
+}
+
+#hand-3 {
+  animation-name: hand-3;
+}
+
 #grad-actions {
   margin-top: calc(100% - 288px);
 }
