@@ -139,6 +139,8 @@ body.index aside.expanded {
   }
 }
 
+/* 애니메이션: 설명글 올라오는 부분 + 각 문단 딜레이 */
+
 .reveal {
   animation: reveal 1s ease-out backwards;
   will-change: opacity, transform;
@@ -181,6 +183,8 @@ body.index aside.expanded {
 .bg-primary {
   background-color: #003ca0 !important;
 }
+
+/* 애니메이션: 배경 원 퍼져나가는 부분 */
 
 #circle-ripple {
   transition: transform 1s ease-in-out;
@@ -285,6 +289,8 @@ body.index aside.expanded {
     to { opacity: 0.7; }
 }
 
+/* 애니메이션: 클릭 인디케이터 깜빡깜빡 */
+
 .click-indicator {
   position: absolute;
   z-index: 1000;
@@ -334,6 +340,8 @@ body.index aside.expanded {
   from { bottom: -253px; right: -175px; }
     to { bottom:  -48px; right:  -36px; }
 }
+
+/* 애니메이션: 랜딩 페이지 손 동작 */
 
 .hand {
   position: absolute;
@@ -388,6 +396,8 @@ body.index aside.expanded {
 .svg-lines {
   z-index: 100;
 }
+
+/* 애니메이션: 본인 원 위치 아래로 조정하는 부분 */
 
 #ellipse-myself {
   position: absolute;
