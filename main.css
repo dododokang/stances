@@ -79,6 +79,11 @@ textarea {
   border-radius: 26px;
 }
 
+main {
+  position: relative;
+  overflow: hidden;
+}
+
 section {
   height: 100vh;
   padding-right: 50%;
@@ -87,6 +92,7 @@ section {
 
 aside {
   position: fixed;
+  overflow: hidden;
   top: 2.25rem;
   right: 2.25rem;
   width: calc(50vw - 3rem);

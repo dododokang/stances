@@ -83,30 +83,30 @@
             <svg id="lines" class="svg-lines position-absolute d-none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="top: 0; left: 0; transform: scaleY(-1);">
               <defs>
                 <linearGradient id="lines__grad-0">
-                  <stop offset="98%" stop-color="transparent" />
-                  <stop offset="99%" />
-                  <stop offset="100%" />
+                  <stop offset="0%" />
+                  <stop offset="1%" />
+                  <stop offset="2%" stop-color="transparent" />
                 </linearGradient>
-                <linearGradient id="lines__grad-1">
+                <linearGradient id="lines__grad-1" class="grad-reverse">
                   <stop offset="98%" stop-color="transparent" />
                   <stop offset="99%" />
                   <stop offset="100%" />
                 </linearGradient>
                 <linearGradient id="lines__grad-2">
-                  <stop offset="98%" stop-color="transparent" />
-                  <stop offset="99%" />
-                  <stop offset="100%" />
+                  <stop offset="0%" />
+                  <stop offset="1%" />
+                  <stop offset="2%" stop-color="transparent" />
                 </linearGradient>
-                <linearGradient id="lines__grad-3">
+                <linearGradient id="lines__grad-3" class="grad-reverse">
                   <stop offset="98%" stop-color="transparent" />
                   <stop offset="99%" />
                   <stop offset="100%" />
                 </linearGradient>
               </defs>
-              <line id="lines__line-0" x1="320" y1="97" x2="65" y2="368" stroke="url(#lines__grad-0)" stroke-width="4" style="opacity: 0.5;" />
-              <line id="lines__line-1" x1="320" y1="97" x2="545" y2="433" stroke="url(#lines__grad-1)" stroke-width="4" style="opacity: 0.5;" />
-              <line id="lines__line-2" x1="320" y1="97" x2="224" y2="499" stroke="url(#lines__grad-2)" stroke-width="4" style="opacity: 0.5;" />
-              <line id="lines__line-3" x1="320" y1="97" x2="385" y2="564" stroke="url(#lines__grad-3)" stroke-width="4" style="opacity: 0.5;" />
+              <line id="lines__line-0" x1="320" y1="97" x2="65" y2="368" stroke="url(#lines__grad-0)" stroke-width="3" style="opacity: 0.5;" />
+              <line id="lines__line-1" x1="320" y1="97" x2="545" y2="433" stroke="url(#lines__grad-1)" stroke-width="3" style="opacity: 0.5;" />
+              <line id="lines__line-2" x1="320" y1="97" x2="224" y2="499" stroke="url(#lines__grad-2)" stroke-width="3" style="opacity: 0.5;" />
+              <line id="lines__line-3" x1="320" y1="97" x2="385" y2="564" stroke="url(#lines__grad-3)" stroke-width="3" style="opacity: 0.5;" />
             </svg>
           </div>
         </section>
@@ -493,7 +493,8 @@
           color = color || 'white';
           $ellipse.data('color', color)
                   .find('ellipse').not('[fill]').attr('fill', color);
-          $linesGrad.find('stop:nth-of-type(3)').attr('stop-color', color);
+          $linesGrad.not('.grad-reverse').find('stop:nth-of-type(1)').attr('stop-color', color);
+          $linesGrad.filter('.grad-reverse').find('stop:nth-of-type(3)').attr('stop-color', color);
           state.usedColors.push(color);
         }
 
@@ -511,8 +512,10 @@
         var i = 0;
         var refreshId = setInterval(function() {
           ++i;
-          $('#lines linearGradient stop:nth-of-type(1)').attr('offset', 98 - i + '%');
-          $('#lines linearGradient stop:nth-of-type(2)').attr('offset', 99 - i + '%');
+          $('#lines linearGradient:not(.grad-reverse) stop:nth-of-type(2)').attr('offset', 1 + i + '%');
+          $('#lines linearGradient:not(.grad-reverse) stop:nth-of-type(3)').attr('offset', 2 + i + '%');
+          $('#lines linearGradient.grad-reverse stop:nth-of-type(1)').attr('offset', 98 - i + '%');
+          $('#lines linearGradient.grad-reverse stop:nth-of-type(2)').attr('offset', 99 - i + '%');
           if (i >= 98)
             clearInterval(refreshId);
         }, 4);
