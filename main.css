@@ -119,6 +119,8 @@ body.index aside.expanded {
   opacity: 0 !important;
 }
 
+/* 애니메이션: 설명글 올라오는 부분 + 각 문단 딜레이 */
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -138,8 +140,6 @@ body.index aside.expanded {
     opacity: 1;
   }
 }
-
-/* 애니메이션: 설명글 올라오는 부분 + 각 문단 딜레이 */
 
 .reveal {
   animation: reveal 1s ease-out backwards;
@@ -168,7 +168,7 @@ body.index aside.expanded {
 }
 
 [data-reveal="4"] {
-  animation-delay: 5.9s;
+  animation-delay: 5s;
 }
 
 .p-aside {
@@ -284,12 +284,12 @@ body.index aside.expanded {
   border-color: #003ca0;
 }
 
+/* 애니메이션: 클릭 인디케이터 깜빡깜빡 */
+
 @keyframes indicate {
   from { opacity: 0; }
     to { opacity: 0.4; }
 }
-
-/* 애니메이션: 클릭 인디케이터 깜빡깜빡 */
 
 .click-indicator {
   position: absolute;
@@ -317,6 +317,8 @@ body.index aside.expanded {
   z-index: 1001;
 }
 
+/* 애니메이션: 랜딩 페이지 손 동작 */
+
 @keyframes hand-0 {
   from { top: -130px; left: -165px; }
     to { top:  -28px; left:  -42px; }
@@ -336,8 +338,6 @@ body.index aside.expanded {
   from { bottom: -253px; right: -175px; }
     to { bottom:  -48px; right:  -36px; }
 }
-
-/* 애니메이션: 랜딩 페이지 손 동작 */
 
 .hand {
   position: absolute;
