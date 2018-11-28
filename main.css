@@ -285,8 +285,8 @@ body.index aside.expanded {
 }
 
 @keyframes indicate {
-  from { opacity: 0.4; }
-    to { opacity: 0.7; }
+  from { opacity: 0; }
+    to { opacity: 0.4; }
 }
 
 /* 애니메이션: 클릭 인디케이터 깜빡깜빡 */
