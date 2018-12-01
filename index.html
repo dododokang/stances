@@ -251,8 +251,9 @@
         <div class="mt-5 pl-1 pr-5">
           <p data-reveal="1">이제 더 넓은 토론의 영역을 탐험해봅시다.</p>
         </div>
-        <form>
+        <form action="aftervisuals">
           <div>
+            <input type="hidden" name="uid">
             <button type="submit" class="btn btn-primary reveal-static" data-reveal="2">좋아요!</button>
           </div>
         </form>
@@ -260,13 +261,20 @@
     </aside>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4=" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-firestore.js"></script>
     <script>
       firebase.initializeApp({
         projectId: "stances-do7922",
         authDomain: "stances-do7922.firebaseapp.com",
         databaseURL: "https://stances-do7922.firebaseio.com",
         apiKey: "AIzaSyCWO7N60K1Ph6cHKyblHOQ-4gwqBKoyYLs"
+      });
+
+      var db = firebase.firestore();
+
+      db.settings({
+        timestampsInSnapshots: true
       });
 
 
@@ -428,6 +436,14 @@
       $('#aside-1 form').submit(function(e) {
         e.preventDefault();
 
+        db.collection('users').add({
+          'name': state['user-name'],
+          'timestamp': new Date()
+        }).then(function(docRef) {
+          state['user-id'] = docRef.id;
+          $('input[name="uid"]').val(state['user-id']);
+        });
+
         fadeOutIn('#aside-1', '#aside-2');
         fadeOutIn('#main-0 section', '#main-1 section');
 
@@ -500,8 +516,8 @@
         $ellipseMyself.find('ellipse').css('fill', color).removeAttr('fill');
         $('#lines linearGradient stop:nth-of-type(2)').attr('stop-color', color);
         state.usedColors = [color];
+        state.reason = $.trim($(this).find('textarea').val());
 
-        // Firbase writing
         fadeOutIn('#aside-5', '#aside-6');
       });
 
@@ -568,7 +584,18 @@
       $('#aside-8 form').submit(function(e) {
         e.preventDefault();
 
-        console.log(state);
+        var form = this;
+
+        db.collection('users').doc(state['user-id']).set({
+          palette: state['selectedColorSet'],
+          topic: { name: state['topic-name'] },
+          stance: state['stance'],
+          reason: state['reason']
+        }, {
+          merge: true
+        }).then(function() {
+          form.submit();
+        });
       });
     </script>
   </body>
