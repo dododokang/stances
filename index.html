@@ -381,8 +381,10 @@
       var $topicDropdown = $('#topic-dropdown');
 
       $topicDropdown.find('.click-indicator').click(function(e) {
+        e.stopPropagation();
+
         $(this).addClass('d-none');
-        $topicDropdown.find('.dropdown-toggle').dropdown('toggle');
+        $topicDropdown.find('.dropdown-toggle').click();
       });
 
       $topicDropdown.on('show.bs.dropdown', function(e) {
