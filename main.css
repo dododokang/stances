@@ -224,6 +224,11 @@ body.index aside.expanded {
   border-color: #ff7d7d;
 }
 
+.btn-outline-success:focus,
+.btn-outline-danger:focus {
+  box-shadow: none;
+}
+
 .dropdown {
   display: inline-block;
   position: relative;
@@ -365,9 +370,12 @@ body.index aside.expanded {
 }
 
 #grad-actions {
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: 148px;
   z-index: 102;
-  margin-top: calc(100% - 288px);
+  width: 100%;
+  text-align: center;
 }
 
 #grad-actions button {
