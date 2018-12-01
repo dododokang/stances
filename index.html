@@ -196,7 +196,7 @@
         </div>
         <form>
           <div class="mt-5 pl-1">
-            <h3>반대하는 근거로</h3>
+            <h3><span data-bind-verbose="stance"></span>하는 근거로</h3>
             <h3><textarea name="reason" placeholder="‘~다’로 끝나는 한 문장으로 적어주세요." rows="2" required></textarea>가<br>있다.</h3>
           </div>
           <div>
@@ -475,6 +475,17 @@
 
         stateUpdate('stance', $input3.val());
 
+        var verboseStance;
+        switch (state.stance) {
+          case 'agree':
+            verboseStance = '찬성'; break;
+          case 'disagree':
+            verboseStance = '반대'; break;
+          default:
+            verboseStance = '주장';
+        }
+        $('[data-bind-verbose="stance"]').text(verboseStance);
+
         fadeOutIn('#aside-3', '#aside-4');
       });
 
@@ -552,6 +563,12 @@
         }, 6);
 
         fadeOutIn('#aside-7', '#aside-8');
+      });
+
+      $('#aside-8 form').submit(function(e) {
+        e.preventDefault();
+
+        console.log(state);
       });
     </script>
   </body>
