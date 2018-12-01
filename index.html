@@ -29,6 +29,7 @@
               <svg id="circle-ripple" class="position-absolute" xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="z-index: 50; top: 10px; left: 10px;">
                 <circle cx="10" cy="10" r="10" fill="#001e50" />
               </svg>
+              <div class="click-indicator d-none"></div>
             </div>
             <div id="topic-dropdown" class="dropdown mt-1 mr-3">
               <button class="btn btn-outline-light dropdown-toggle" type="button" data-toggle="dropdown">주제 선택하기</button>
@@ -330,8 +331,6 @@
           $ellipseMyself = $('#ellipse-myself');
 
       $('#grad-shuffle').click(function() {
-        $(this).siblings('.click-indicator').addClass('d-none');
-
         if (paletteTemp || this.disabled)
           $ellipseMyself.removeClass(paletteTemp);
 
@@ -343,11 +342,14 @@
           }
         }
         $ellipseMyself.addClass(paletteTemp).find('ellipse').attr('stroke', 'transparent');
-        $('#grad-select').prop('disabled', false);
+        // $('#grad-select').prop('disabled', false);
+        $('#aside-4 button[type="submit"]').prop('disabled', false).removeClass('d-none');
       });
 
-      $('#grad-select').click(function() {
-        if (!paletteTemp || this.disabled)
+      $('#aside-4 form').submit(function(e) {
+        e.preventDefault();
+
+        if (!paletteTemp)
           return;
 
         state.selectedColorSet = palette[paletteTemp];
@@ -355,7 +357,8 @@
         $('#circle-profile').addClass(paletteTemp);
         $('#grad-actions').addClass('d-none');
         $('.bg-darker').removeClass('bg-darker');
-        $('#aside-4 button[type="submit"]').prop('disabled', false).removeClass('d-none');
+
+        fadeOutIn('#aside-4', '#aside-5');
       });
 
 
@@ -377,8 +380,9 @@
 
       var $topicDropdown = $('#topic-dropdown');
 
-      $topicDropdown.click(function(e) {
-        $(this).find('.click-indicator').addClass('d-none');
+      $topicDropdown.find('.click-indicator').click(function(e) {
+        $(this).addClass('d-none');
+        $topicDropdown.find('.dropdown-toggle').dropdown('toggle');
       });
 
       $topicDropdown.on('show.bs.dropdown', function(e) {
@@ -401,6 +405,13 @@
 
         $ellipseMyself.removeClass('d-none');
         $('#aside-2 button[type="submit"]').prop('disabled', false).removeClass('d-none');
+      });
+
+      $('#profile').click(function() {
+        $(this).find('.click-indicator').addClass('d-none');
+
+        $('.bg-primary').addClass('bg-darker');
+        $('#grad-actions').removeClass('d-none');
       });
 
       $('#aside-0 form').submit(function(e) {
@@ -456,22 +467,13 @@
       $form3.submit(function(e) {
         e.preventDefault();
 
-        $('.bg-primary').addClass('bg-darker');
-        $('#grad-actions').removeClass('d-none');
-
         setTimeout(function() {
-          $('#grad-actions .click-indicator').removeClass('d-none');
+          $('#profile .click-indicator').removeClass('d-none');
         }, 5100);
 
         stateUpdate('stance', $input3.val());
 
         fadeOutIn('#aside-3', '#aside-4');
-      });
-
-      $('#aside-4 form').submit(function(e) {
-        e.preventDefault();
-
-        fadeOutIn('#aside-4', '#aside-5');
       });
 
       $('#aside-5 textarea').on('input', function(e) {
