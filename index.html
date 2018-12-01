@@ -375,12 +375,18 @@
 
       // Tutorial
 
-      $('#topic-dropdown').on('show.bs.dropdown', function(e) {
+      var $topicDropdown = $('#topic-dropdown');
+
+      $topicDropdown.click(function(e) {
         $(this).find('.click-indicator').addClass('d-none');
       });
 
-      $('#topic-dropdown').on('hide.bs.dropdown', function(e) {
-        if (e.clickEvent === undefined || e.clickEvent.target === undefined)
+      $topicDropdown.on('show.bs.dropdown', function(e) {
+        $(this).find('.click-indicator').addClass('d-none');
+      });
+
+      $topicDropdown.on('hide.bs.dropdown', function(e) {
+        if (e.clickEvent === undefined || e.clickEvent.target === undefined || tutorialData[e.clickEvent.target.id] === undefined)
           return;
 
         var topic = tutorialData[e.clickEvent.target.id];
@@ -413,14 +419,15 @@
         fadeOutIn('#main-0 section', '#main-1 section');
 
         setTimeout(function() {
-          $('#topic-dropdown .click-indicator').removeClass('d-none');
+          if (state['topic-name'] === undefined)
+            $topicDropdown.find('.click-indicator').removeClass('d-none');
         }, 5100);
       });
 
       $('#aside-2 form').submit(function(e) {
         e.preventDefault();
 
-        $('#topic-dropdown .dropdown-toggle').dropdown('dispose').removeAttr('data-toggle');
+        $topicDropdown.find('.dropdown-toggle').dropdown('dispose').removeAttr('data-toggle');
         fadeOutIn('#aside-2', '#aside-3');
       });
 
