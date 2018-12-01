@@ -25,7 +25,7 @@
             <div id="profile" class="position-relative float-left ml-2">
               <svg id="circle-profile" class="position-relative" xmlns="http://www.w3.org/2000/svg" width="40" height="40" style="z-index: 51;">
                 <circle cx="20" cy="20" r="20" fill="#fff" />
-              </svg><span class="d-inline-block position-relative ml-3" style="z-index: 51; font-size: 14px; vertical-align: -2px;" data-bind="name"></span>
+              </svg><span class="d-inline-block position-relative ml-3" style="z-index: 51; font-size: 14px; vertical-align: -2px;" data-bind="user-name"></span>
               <svg id="circle-ripple" class="position-absolute" xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="z-index: 50; top: 10px; left: 10px;">
                 <circle cx="10" cy="10" r="10" fill="#001e50" />
               </svg>
@@ -121,7 +121,7 @@
         </div>
         <form style="margin-top: 176px;">
           <div>
-            <input type="text" name="name" placeholder="이름을 입력하세요." style="width: 260px; height: 34px; font-size: 14px; text-align: center; border: 2px solid #7f7f7f; border-radius: 17px;" required>
+            <input type="text" name="user-name" placeholder="이름을 입력하세요." style="width: 260px; height: 34px; font-size: 14px; text-align: center; border: 2px solid #7f7f7f; border-radius: 17px;" required>
           </div>
           <div style="margin-top: 32px;">
             <button type="submit" class="btn btn-primary position-static" style="width: 120px; height: 34px; font-size: 14px;">등록</button>
@@ -130,7 +130,7 @@
       </div>
       <div id="aside-1" class="p-5 will-fade d-none transparent">
         <div class="pl-1 pr-3">
-          <h2>환영합니다.<br><span data-bind="name"></span>님!</h2>
+          <h2>환영합니다.<br><span data-bind="user-name"></span>님!</h2>
         </div>
         <div class="mt-5 pl-1 pr-5">
           <p>토론의 영역에 오신 것을 환영합니다!<br>탐험가님은 앞으로 미지의 의견들을 찾아 탐험해 나갈 것입니다.<br>Stances에서는 탐험가님의 길잡이가 될 수 있는 토론 지도를 제공해드립니다. 화면의 왼쪽이 앞으로 탐험가님이 어떤 의견 영역으로 나갈 것인지 도움이 될 수 있는 토론 지도 입니다.</p>
@@ -196,7 +196,7 @@
         </div>
         <form>
           <div class="mt-5 pl-1">
-            <h3>반대하는 근거로</h3>
+            <h3><span data-bind-verbose="stance"></span>하는 근거로</h3>
             <h3><textarea name="reason" placeholder="‘~다’로 끝나는 한 문장으로 적어주세요." rows="2" required></textarea>가<br>있다.</h3>
           </div>
           <div>
@@ -251,8 +251,9 @@
         <div class="mt-5 pl-1 pr-5">
           <p data-reveal="1">이제 더 넓은 토론의 영역을 탐험해봅시다.</p>
         </div>
-        <form>
+        <form action="aftervisuals">
           <div>
+            <input type="hidden" name="uid">
             <button type="submit" class="btn btn-primary reveal-static" data-reveal="2">좋아요!</button>
           </div>
         </form>
@@ -260,13 +261,20 @@
     </aside>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4=" crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-firestore.js"></script>
     <script>
       firebase.initializeApp({
         projectId: "stances-do7922",
         authDomain: "stances-do7922.firebaseapp.com",
         databaseURL: "https://stances-do7922.firebaseio.com",
         apiKey: "AIzaSyCWO7N60K1Ph6cHKyblHOQ-4gwqBKoyYLs"
+      });
+
+      var db = firebase.firestore();
+
+      db.settings({
+        timestampsInSnapshots: true
       });
 
 
@@ -381,8 +389,10 @@
       var $topicDropdown = $('#topic-dropdown');
 
       $topicDropdown.find('.click-indicator').click(function(e) {
+        e.stopPropagation();
+
         $(this).addClass('d-none');
-        $topicDropdown.find('.dropdown-toggle').dropdown('toggle');
+        $topicDropdown.find('.dropdown-toggle').click();
       });
 
       $topicDropdown.on('show.bs.dropdown', function(e) {
@@ -417,7 +427,7 @@
       $('#aside-0 form').submit(function(e) {
         e.preventDefault();
 
-        stateUpdate('name', $(this).find('[name="name"]').val());
+        stateUpdate('user-name', $(this).find('[name="user-name"]').val());
 
         $aside.addClass('fixed').addClass('expanded');
         fadeOutIn('#aside-0', '#aside-1');
@@ -425,6 +435,14 @@
 
       $('#aside-1 form').submit(function(e) {
         e.preventDefault();
+
+        db.collection('users').add({
+          'name': state['user-name'],
+          'timestamp': new Date()
+        }).then(function(docRef) {
+          state['user-id'] = docRef.id;
+          $('input[name="uid"]').val(state['user-id']);
+        });
 
         fadeOutIn('#aside-1', '#aside-2');
         fadeOutIn('#main-0 section', '#main-1 section');
@@ -473,6 +491,17 @@
 
         stateUpdate('stance', $input3.val());
 
+        var verboseStance;
+        switch (state.stance) {
+          case 'agree':
+            verboseStance = '찬성'; break;
+          case 'disagree':
+            verboseStance = '반대'; break;
+          default:
+            verboseStance = '주장';
+        }
+        $('[data-bind-verbose="stance"]').text(verboseStance);
+
         fadeOutIn('#aside-3', '#aside-4');
       });
 
@@ -487,8 +516,8 @@
         $ellipseMyself.find('ellipse').css('fill', color).removeAttr('fill');
         $('#lines linearGradient stop:nth-of-type(2)').attr('stop-color', color);
         state.usedColors = [color];
+        state.reason = $.trim($(this).find('textarea').val());
 
-        // Firbase writing
         fadeOutIn('#aside-5', '#aside-6');
       });
 
@@ -550,6 +579,23 @@
         }, 6);
 
         fadeOutIn('#aside-7', '#aside-8');
+      });
+
+      $('#aside-8 form').submit(function(e) {
+        e.preventDefault();
+
+        var form = this;
+
+        db.collection('users').doc(state['user-id']).set({
+          palette: state['selectedColorSet'],
+          topic: { name: state['topic-name'] },
+          stance: state['stance'],
+          reason: state['reason']
+        }, {
+          merge: true
+        }).then(function() {
+          form.submit();
+        });
       });
     </script>
   </body>
