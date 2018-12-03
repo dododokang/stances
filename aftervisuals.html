@@ -54,11 +54,15 @@
       });
 
       function drawNode(node) {
-        console.log(node);
+        $('#v').append(
+          '<ellipse cx="' + (640 + node.cx) + '" cy="' + (720 - node.cy) + '" rx="' + node.rx + '" ry="' + node.ry + '" stroke="transparent" fill="' + node.fill + '" />'
+        )
       }
 
       function drawLine(x1, y1, x2, y2) {
-        console.log(x1, y1, x2, y2);
+        $('#v').append(
+          '<line x1="' + (640 + x1) + '" y1="' + (720 - y1) + '" x2="' + (640 + x2) + '" y2="' + (720 - y2) + '" stroke="#0068ff" stroke-width="1" />'
+        )
       }
 
       var params = new URLSearchParams(window.location.search),
