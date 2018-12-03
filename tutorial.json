@@ -4,24 +4,24 @@
     "statement": "청소년들에게도 투표권을 부여해야 한다.",
     "reasons": [
       {
-        "id": 0,
-        "stance": "disagree",
-        "content": "청소년은 정치적 판단을 내리기에는 미숙하다."
-      },
-      {
-        "id": 0,
+        "id": 1,
         "stance": "agree",
         "content": "정책에 청소년의 의견도 반영해야 한다."
       },
       {
-        "id": 0,
+        "id": 2,
         "stance": "disagree",
-        "content": "교육 현장이 정치판으로 변질할 수 있다."
+        "content": "청소년은 정치적 판단을 내리기에는 미숙하다."
       },
       {
-        "id": 0,
+        "id": 3,
         "stance": "agree",
         "content": "청소년들도 국민으로서 권리를 보장받아야 한다."
+      },
+      {
+        "id": 4,
+        "stance": "disagree",
+        "content": "교육 현장이 정치판으로 변질할 수 있다."
       }
     ]
   },
@@ -30,24 +30,24 @@
     "statement": "일부 범죄의 경우, 사형집행을 채택할 수 있어야 한다.",
     "reasons": [
       {
-        "id": 0,
-        "stance": "disagree",
-        "content": "모든 판결에는 오판이 있을 가능성이 있다."
-      },
-      {
-        "id": 0,
+        "id": 1,
         "stance": "agree",
         "content": "강한 처벌은 공포감을 주어 범죄를 예방할 수 있다."
       },
       {
-        "id": 0,
+        "id": 2,
         "stance": "disagree",
         "content": "생명권은 모두가 존중 받아야 한다."
       },
       {
-        "id": 0,
+        "id": 3,
         "stance": "agree",
         "content": "사형이 사적 복수의 악순환을 차단할 수 있다."
+      },
+      {
+        "id": 4,
+        "stance": "disagree",
+        "content": "모든 판결에는 오판이 있을 가능성이 있다."
       }
     ]
   },
@@ -56,24 +56,24 @@
     "statement": "1인 미디어에도 강력한 규제가 필요하다.",
     "reasons": [
       {
-        "id": 0,
-        "stance": "disagree",
-        "content": "강력한 규제는 표현의 자유를 해친다."
-      },
-      {
-        "id": 0,
+        "id": 1,
         "stance": "agree",
         "content": "1인 미디어는 자율적인 규제를 충분히 하지 못한다."
       },
       {
-        "id": 0,
+        "id": 2,
         "stance": "disagree",
         "content": "1인 미디어에 적절한 규제방식을 결정하기 어렵다."
       },
       {
-        "id": 0,
+        "id": 3,
         "stance": "agree",
         "content": "표현의 자유보다 개인의 권리가 우선이어야 한다."
+      },
+      {
+        "id": 4,
+        "stance": "disagree",
+        "content": "강력한 규제는 표현의 자유를 해친다."
       }
     ]
   },
@@ -82,25 +82,25 @@
     "statement": "탕수육을 먹을 때 소스를 부어먹는 것보다 찍어먹는 것이 더 맛있다.",
     "reasons": [
       {
-        "id": 0,
-        "stance": "disagree",
-        "content": "소스에 적셔진 탕수육은 먹을 때 입천장이 까지지 않는다."
-      },
-      {
-        "id": 0,
+        "id": 1,
         "stance": "agree",
         "content": "양념의 양을 조절해서 먹을 수 있는 것이 건강에 좋다."
       },
       {
-        "id": 0,
+        "id": 2,
         "stance": "disagree",
         "content": "음식을 양념을 찍는 과정은 번거롭다."
       },
       {
-        "id": 0,
+        "id": 3,
         "stance": "agree",
         "content": "튀김은 바삭해야한다."
-      }
+      },
+      {
+        "id": 4,
+        "stance": "disagree",
+        "content": "소스에 적셔진 탕수육은 먹을 때 입천장이 까지지 않는다."
+      } 
     ]
   }
 }
