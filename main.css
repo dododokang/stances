@@ -113,7 +113,7 @@ body.index aside.expanded {
 }
 
 *:focus {
-  outline: none;
+  outline: none !important;
 }
 
 .will-fade {
