@@ -89,7 +89,6 @@ main {
 
 section {
   height: 100vh;
-  color: white;
 }
 
 aside {
@@ -99,7 +98,7 @@ aside {
   right: 2.25rem;
   width: calc(50vw - 3rem);
   height: calc(100vh - 4.5rem);
-  background-color: white;
+  background-color: #fff;
   transition: all 500ms ease;
   will-change: top, right, width, height, padding;
 }
@@ -187,6 +186,7 @@ body.index aside.expanded {
 }
 
 .bg-primary {
+  color: #fff;
   background-color: #003ca0 !important;
 }
 
