@@ -190,6 +190,10 @@ body.index aside.expanded {
   background-color: #003ca0 !important;
 }
 
+.text-primary {
+  color: #003ca0 !important;
+}
+
 /* 애니메이션: 배경 원 퍼져나가는 부분 */
 
 #circle-ripple {
