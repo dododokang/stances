@@ -42,7 +42,7 @@
               <div class="click-indicator d-none"></div>
             </div>
             <div id="grad-actions" class="d-none">
-              <button id="grad-shuffle" type="button" class="btn btn-outline-light"><img src="shuffle.svg" alt="Shuffle" width="21" height="14"></button>
+              <button id="grad-shuffle" type="button" class="btn btn-outline-light"><img src="shuffle.svg" alt="Shuffle" width="16" height="10" style="vertical-align: 2px;"></button>
             </div>
             <svg id="ellipse-myself" class="svg-ellipse d-none" xmlns="http://www.w3.org/2000/svg" width="360" height="120">
               <defs>
@@ -567,7 +567,7 @@
         for (i = 0; i < 4; ++i) {
           if ($(this).find('[name="topic-reason-' + i + '"]').prop('checked')) {
             var topic = tutorialData[state['topic-codename']];
-            state.selectedReasons.push(topic.reasons[i]]);
+            state.selectedReasons.push(topic.reasons[i]);
             $('#lines__line-' + i).removeClass('d-none');
           }
         }
