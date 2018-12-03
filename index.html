@@ -566,7 +566,7 @@
         var i;
         for (i = 0; i < 4; ++i) {
           if ($(this).find('[name="topic-reason-' + i + '"]').prop('checked')) {
-            var topic = tutorialData[state['topic-codename'];
+            var topic = tutorialData[state['topic-codename']];
             state.selectedReasons.push(topic.reasons[i]]);
             $('#lines__line-' + i).removeClass('d-none');
           }
