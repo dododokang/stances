@@ -19,7 +19,7 @@
           </div>
         </section>
       </div>
-      <div id="main-1" class="bg-primary bg-transition text-center">
+      <div id="main-1" class="bg-primary bg-transition">
         <section class="p-aside will-fade d-none transparent">
           <div class="position-relative h-100 p-4 text-center">
             <div id="profile" class="position-relative float-left ml-2">
@@ -404,6 +404,7 @@
           return;
 
         var topic = tutorialData[e.clickEvent.target.id];
+        stateUpdate('topic-codename', e.clickEvent.target.id);
         stateUpdate('topic-name', topic.name);
         stateUpdate('topic-statement', topic.statement);
         stateUpdate('topic-reason-0', topic.reasons[0].content).data('stance', topic.reasons[0].stance);
@@ -560,10 +561,16 @@
       $('#aside-7 form').submit(function(e) {
         e.preventDefault();
 
+        state.selectedReasons = [];
+
         var i;
-        for (i = 0; i < 4; ++i)
-          if ($(this).find('[name="topic-reason-' + i + '"]').prop('checked'))
+        for (i = 0; i < 4; ++i) {
+          if ($(this).find('[name="topic-reason-' + i + '"]').prop('checked')) {
+            var topic = tutorialData[state['topic-codename'];
+            state.selectedReasons.push(topic.reasons[i]]);
             $('#lines__line-' + i).removeClass('d-none');
+          }
+        }
 
         $('#lines').removeClass('d-none');
 
@@ -588,7 +595,10 @@
 
         db.collection('users').doc(state['user-id']).set({
           palette: state['selectedColorSet'],
-          topic: { name: state['topic-name'] },
+          topic: {
+            name: state['topic-name'],
+            statement: state['topic-statement']
+          },
           stance: state['stance'],
           reason: state['reason']
         }, {

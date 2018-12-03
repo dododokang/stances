@@ -39,7 +39,6 @@ p {
   font-weight: 500;
   line-height: 28px;
   letter-spacing: -0.01em;
-  color: #333;
   word-break: keep-all;
 }
 
@@ -69,6 +68,10 @@ input[name="stance"] ~ button {
   border-radius: 21px;
 }
 
+input {
+  color: #333;
+}
+
 textarea {
   width: 420px;
   padding: 0 1.5rem 0.25rem;
@@ -86,7 +89,6 @@ main {
 
 section {
   height: 100vh;
-  padding-right: 50%;
   color: white;
 }
 
