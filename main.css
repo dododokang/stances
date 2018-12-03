@@ -112,6 +112,10 @@ body.index aside.expanded {
   padding: 2.25rem 2.25rem 2.25rem 0.75rem;
 }
 
+*:focus {
+  outline: none;
+}
+
 .will-fade {
   transition: opacity 425ms ease-in-out;
   will-change: opacity;
