@@ -453,40 +453,40 @@ body.index aside.expanded {
 
 #ellipse-0 {
   position: absolute;
-  bottom: 341px;
-  left: -26px;
+  bottom: 492px;
+  left: -40px;
 }
 
 #ellipse-0 ellipse:not(:first-of-type) {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 #ellipse-1 {
   position: absolute;
-  bottom: 415px;
-  left: 480px;
+  bottom: 492px;
+  left: 550px;
 }
 
 #ellipse-1 ellipse:not(:first-of-type) {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 #ellipse-2 {
   position: absolute;
-  bottom: 487px;
-  left: 178px;
+  bottom: 492px;
+  left: 157px;
 }
 
 #ellipse-2 ellipse:not(:first-of-type) {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 #ellipse-3 {
   position: absolute;
-  bottom: 557px;
-  left: 354px;
+  bottom: 492px;
+  left: 353px;
 }
 
 #ellipse-3 ellipse:not(:first-of-type) {
-  opacity: 0.3;
+  opacity: 1;
 }
