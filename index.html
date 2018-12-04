@@ -84,24 +84,24 @@
             <svg id="lines" class="svg-lines position-absolute d-none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="top: 0; left: 0; transform: scaleY(-1);">
               <defs>
                 <linearGradient id="lines__grad-0">
-                  <stop offset="0%" />
-                  <stop offset="1%" />
-                  <stop offset="2%" stop-color="transparent" />
+                  <stop offset="98%" stop-color="transparent" />
+                  <stop offset="99%" />
+                  <stop offset="100%" />
                 </linearGradient>
                 <linearGradient id="lines__grad-1" class="grad-reverse">
-                  <stop offset="98%" stop-color="transparent" />
-                  <stop offset="99%" />
-                  <stop offset="100%" />
-                </linearGradient>
-                <linearGradient id="lines__grad-2">
                   <stop offset="0%" />
                   <stop offset="1%" />
                   <stop offset="2%" stop-color="transparent" />
                 </linearGradient>
-                <linearGradient id="lines__grad-3" class="grad-reverse">
+                <linearGradient id="lines__grad-2">
                   <stop offset="98%" stop-color="transparent" />
                   <stop offset="99%" />
                   <stop offset="100%" />
+                </linearGradient>
+                <linearGradient id="lines__grad-3" class="grad-reverse">
+                  <stop offset="0%" />
+                  <stop offset="1%" />
+                  <stop offset="2%" stop-color="transparent" />
                 </linearGradient>
               </defs>
               <line id="lines__line-0" class="d-none" x1="320" y1="97" x2="25" y2="510" stroke="url(#lines__grad-0)" stroke-width="1" />
@@ -515,7 +515,7 @@
 
         var color = state.selectedColorSet[state.stance];
         $ellipseMyself.find('ellipse').css('fill', color).removeAttr('fill');
-        $('#lines linearGradient stop:nth-of-type(2)').attr('stop-color', color);
+        $('#lines linearGradient stop:nth-of-type(2)').attr('stop-color', '#0068ff');
         state.usedColors = [color];
         state.reason = $.trim($(this).find('textarea').val());
 
@@ -547,8 +547,8 @@
           color = color || 'white';
           $ellipse.data('color', color)
                   .find('ellipse').not('[fill]').attr('fill', color);
-          $linesGrad.not('.grad-reverse').find('stop:nth-of-type(1)').attr('stop-color', color);
-          $linesGrad.filter('.grad-reverse').find('stop:nth-of-type(3)').attr('stop-color', color);
+          $linesGrad.filter('.grad-reverse').find('stop:nth-of-type(1)').attr('stop-color', '#0068ff');
+          $linesGrad.not('.grad-reverse').find('stop:nth-of-type(3)').attr('stop-color', '#0068ff');
           state.usedColors.push(color);
         }
 
@@ -577,10 +577,10 @@
         i = 0;
         var refreshId = setInterval(function() {
           ++i;
-          $('#lines linearGradient:not(.grad-reverse) stop:nth-of-type(2)').attr('offset', 1 + i + '%');
-          $('#lines linearGradient:not(.grad-reverse) stop:nth-of-type(3)').attr('offset', 2 + i + '%');
-          $('#lines linearGradient.grad-reverse stop:nth-of-type(1)').attr('offset', 98 - i + '%');
-          $('#lines linearGradient.grad-reverse stop:nth-of-type(2)').attr('offset', 99 - i + '%');
+          $('#lines linearGradient.grad-reverse stop:nth-of-type(2)').attr('offset', 1 + i + '%');
+          $('#lines linearGradient.grad-reverse stop:nth-of-type(3)').attr('offset', 2 + i + '%');
+          $('#lines linearGradient:not(.grad-reverse) stop:nth-of-type(1)').attr('offset', 98 - i + '%');
+          $('#lines linearGradient:not(.grad-reverse) stop:nth-of-type(2)').attr('offset', 99 - i + '%');
           if (i >= 98)
             clearInterval(refreshId);
         }, 6);
