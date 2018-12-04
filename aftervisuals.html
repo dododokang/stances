@@ -29,9 +29,11 @@
             <img src="back.svg" alt="Back" width="14" height="12" style="margin-left: 2px; vertical-align: bottom;">
           </a>
         </div>
-        <svg id="v" xmlns="http://www.w3.org/2000/svg" width="1280" height="720" style="position: absolute; top: 0; left: 0;">
-          <ellipse id="el-self" cx="640" cy="552" rx="180" ry="60" stroke="transparent" fill="transparent" />
-        </svg>
+        <div>
+          <svg id="v" xmlns="http://www.w3.org/2000/svg" width="1280" height="720" style="position: absolute; top: 0; left: 0;">
+            <ellipse id="el-self" cx="640" cy="552" rx="180" ry="60" stroke="transparent" fill="transparent" />
+          </svg>
+        </div>
         <div class="w-100 text-center" style="position: absolute; bottom: 0; left: 0; padding-bottom: 42px; padding-left: 2px; font-size: 18px;">“<span data-bind="topic-statement"></span>”</div>
       </section>
     </main>
@@ -54,14 +56,26 @@
       });
 
       function drawNode(node) {
+        var el = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
         $('#v').append(
-          '<ellipse cx="' + (640 + node.cx) + '" cy="' + (720 - node.cy) + '" rx="' + node.rx + '" ry="' + node.ry + '" stroke="transparent" fill="' + node.fill + '" />'
+          $(el).attr('cx', 640 + node.cx)
+               .attr('cy', 720 - node.cy)
+               .attr('rx', node.rx)
+               .attr('ry', node.ry)
+               .attr('fill', node.fill)
+               .attr('stroke', 'transparent')
         )
       }
 
       function drawLine(x1, y1, x2, y2) {
+        var el = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         $('#v').append(
-          '<line x1="' + (640 + x1) + '" y1="' + (720 - y1) + '" x2="' + (640 + x2) + '" y2="' + (720 - y2) + '" stroke="#0068ff" stroke-width="1" />'
+          $(el).attr('x1', 640 + x1)
+               .attr('y1', 720 - y1)
+               .attr('x2', 640 + x2)
+               .attr('y2', 720 - y2)
+               .attr('stroke', '#0068ff')
+               .attr('stroke-width', 1)
         )
       }
 
@@ -84,7 +98,7 @@
               $.each(fixtures.nodes, function(j, node1) {
                 if (node1.id === nodeId1) {
                   drawNode(node1);
-                  drawLine(640, 552, node1.cx, node1.cy);
+                  drawLine(0, 168, node1.cx, node1.cy);
 
                   $.each(fixtures.links['depth-1'][node1.id.toString()], function(i, nodeId2) {
                     $.each(fixtures.nodes, function(j, node2) {
