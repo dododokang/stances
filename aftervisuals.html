@@ -103,26 +103,28 @@
             $.each(user.selectedReasons, function(i, nodeId1) {
               $.each(fixtures.nodes, function(j, node1) {
                 if (node1.id === nodeId1) {
-                  drawNode(node1);
                   drawLine(0, 168, node1.cx, node1.cy);
 
                   $.each(fixtures.links['depth-1'][node1.id.toString()], function(i, nodeId2) {
                     $.each(fixtures.nodes, function(j, node2) {
                       if (node2.id === nodeId2) {
-                        drawNode(node2);
                         drawLine(node1.cx, node1.cy, node2.cx, node2.cy);
 
                         $.each(fixtures.links['depth-2'][node2.id.toString()], function(i, nodeId3) {
                           $.each(fixtures.nodes, function(j, node3) {
                             if (node3.id === nodeId3) {
-                              drawNode(node3);
                               drawLine(node2.cx, node2.cy, node3.cx, node3.cy);
+                              drawNode(node3);
                             }
                           });
                         });
+
+                        drawNode(node2);
                       }
                     });
                   });
+
+                  drawNode(node1);
                 }
               });
             });
