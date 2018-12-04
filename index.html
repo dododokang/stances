@@ -596,7 +596,7 @@
         db.collection('users').doc(state['user-id']).set({
           palette: state['selectedColorSet'],
           topic: {
-            codename: stats['topic-codename'],
+            codename: state['topic-codename'],
             name: state['topic-name'],
             statement: state['topic-statement']
           },
